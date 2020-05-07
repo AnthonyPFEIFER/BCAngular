@@ -18,7 +18,7 @@ export class ProProfilComponent implements OnInit {
     this.professionalService.getProfessionalById(this.id).subscribe((data: Professional[]) => {
       this.professionals = data;
     });
-
   }
+
 
 }

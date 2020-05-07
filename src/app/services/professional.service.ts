@@ -61,10 +61,14 @@ export class ProfessionalService {
       catchError(this.handleError)
     );
   }
-
-
   add(professional: Professional): Observable<Professional> {
     return this.httpClient.post<Professional>(this.addProUrl, professional).pipe(
+      retry(1),
+      catchError(this.handleError)
+    );
+  }
+  deletePro(id: number) {
+    return this.httpClient.delete<Professional>(this.removeProUrl + '/' + id).pipe(
       retry(1),
       catchError(this.handleError)
     );

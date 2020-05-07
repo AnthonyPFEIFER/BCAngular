@@ -4,6 +4,8 @@
 <div *ngFor="let professional of professionals">
     <a [routerLink]="['/pro-profil', professional.id]"> {{ professional.firstname}} - {{ professional.lastname }}
     </a>
+    <a class="btn btn-danger m-2" (click)="deleteProfessional(professional.id)"> /!\ Supprimer cet utilisateur /!\
+    </a>
 </div>
 
 <h1>Le site comptabilise un total de {{ garageNumber }} garages</h1>
