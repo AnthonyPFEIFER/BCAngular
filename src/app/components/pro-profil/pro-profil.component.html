@@ -1,4 +1,5 @@
 <p>pro-profil works!</p>
 
-
-<p> {{ professional.firstname}} - {{ professional.lastname }} </p>
+<div *ngFor="let professional of professionals">
+    {{ professional.firstname}} - {{ professional.lastname }}
+</div>

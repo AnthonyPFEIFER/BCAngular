@@ -11,7 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class ProfessionalService {
 
-  professional: Professional;
+  professional: Professional[];
+
   loginProUrl = 'http://localhost/Symfony/BusinessCaseApi/public/index.php/loginPro';
   editProUrl = 'http://localhost/Symfony/BusinessCaseApi/public/index.php/pro/edit'; // + id
   addProUrl = 'http://localhost/Symfony/BusinessCaseApi/public/index.php/admin/pro-add';
@@ -54,8 +55,8 @@ export class ProfessionalService {
         catchError(this.handleError)
       );
   }
-  getProfessionalById(id: number): Observable<Professional> {
-    return this.httpClient.get<Professional>(this.listProByIdUrl + '/' + id).pipe(
+  getProfessionalById(id: number): Observable<Professional[]> {
+    return this.httpClient.get<Professional[]>(this.listProByIdUrl + '/' + id).pipe(
       retry(1),
       catchError(this.handleError)
     );

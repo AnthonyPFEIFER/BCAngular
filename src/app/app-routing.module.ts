@@ -16,6 +16,7 @@ const routes: Routes = [
   { path: 'advert', component: AdvertComponent },
   { path: 'add-pro', component: AddProComponent },
   { path: 'admin-profil', component: AdminProfilComponent },
+  { path: 'pro-profil/:id', component: ProProfilComponent },
   { path: 'pro-profil', component: ProProfilComponent }
 
 ];

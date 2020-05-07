@@ -2,7 +2,8 @@
 <h1>Le site comptabilise un total de {{ proNumber }} professionnels</h1>
 
 <div *ngFor="let professional of professionals">
-    <a [routerLink]="['/professional', professional.id]"> {{ professional.firstname}} - {{ professional.lastname }} </a>
+    <a [routerLink]="['/pro-profil', professional.id]"> {{ professional.firstname}} - {{ professional.lastname }}
+    </a>
 </div>
 
 <h1>Le site comptabilise un total de {{ garageNumber }} garages</h1>

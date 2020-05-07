@@ -10,10 +10,14 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class ProProfilComponent implements OnInit {
   professional: Professional;
   professionals: Professional[];
+  id: number;
   constructor(private route: ActivatedRoute, private professionalService: ProfessionalService, private router: Router) { }
 
   ngOnInit(): void {
-
+    this.id = this.route.snapshot.params.id;
+    this.professionalService.getProfessionalById(this.id).subscribe((data: Professional[]) => {
+      this.professionals = data;
+    });
 
   }
 
