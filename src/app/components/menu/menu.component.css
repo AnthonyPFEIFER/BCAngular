@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.menu-accueil{
+    margin: 0 2%;
+    list-style: none;
+}
+.header-accueil, .header-accueil a{
+    background-color: #0070DD;
+    color: white;
+}
+.menu-accueil{
+    text-align: center;
+}
+.logo{
+    color: rgb(250, 218, 76);
+    font-size: 1.5rem;
+}
+a{
+    font-size: 1.5rem;
+}
+a:hover {
+    color: rgb(250, 218, 76) !important ;
+    text-decoration: none;
+  }
+/* Fin header et début Search Bar*/
+
+.btnGroupDrop1{
+    border: 1px solid rgb(250, 218, 76);
+}
+.search-btn{
+    padding: 10px 15px;
+    background-color: rgb(250, 218, 76);
+    display: block;
+    margin: auto;
+    border-radius: 20px;
+    border: 0.5px solid black;
+}
+.col-md-2{
+    width: 60px;
+    text-align: center;
+}
+header{
+    margin-bottom: 20px;
+}

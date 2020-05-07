@@ -1,0 +1,106 @@
+<div class="recherche container-fluid">
+    <div class="row">
+        <div class="col-md-9 barre-filtres">
+            <div class="row">
+                <div class="col-md-2 col-6">
+                    <div class="btn-group research-bar" role="group">
+                        <button id="" type="button" class="btn btn-light dropdown-toggle btnGroupDrop1"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Marque
+                        </button>
+                        <div class="dropdown-menu " aria-labelledby="btnGroupDrop1">
+                            <a class="dropdown-item" href="#">Peugeot</a>
+                            <a class="dropdown-item" href="#">Renault</a>
+                            <a class="dropdown-item" href="#">Opel</a>
+                            <a class="dropdown-item" href="#">Citroën</a>
+                            <a class="dropdown-item" href="#">Volkswagen</a>
+                            <a class="dropdown-item" href="#">Mercedes</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6">
+                    <div class="btn-group research-bar" role="group">
+                        <button id="" type="button" class="btn btn-light dropdown-toggle btnGroupDrop1 "
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Modèle
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                            <a class="dropdown-item" href="#">206</a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6">
+                    <div class="btn-group research-bar" role="group">
+                        <button id="" type="button" class="btn btn-light dropdown-toggle btnGroupDrop1"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Carburant
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                            <a class="dropdown-item" href="#">Essence</a>
+                            <a class="dropdown-item" href="#">Diesel</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6">
+                    <div class="btn-group research-bar" role="group">
+                        <button id="" type="button" class="btn btn-light dropdown-toggle btnGroupDrop1"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Mise en circulation
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                            <a class="dropdown-item" href="#">2000</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6">
+                    <div class="btn-group research-bar" role="group">
+                        <button id="" type="button" class="btn btn-light dropdown-toggle btnGroupDrop1"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Kilométrage
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                            <a class="dropdown-item" href="#">50000 km</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6">
+                    <div class="btn-group research-bar" role="group">
+                        <button id="" type="button" class="btn btn-light dropdown-toggle btnGroupDrop1"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Prix
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                            <a class="dropdown-item" href="#">2000 €</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="button" class="btn btn-default search-btn">
+                        Rechercher
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class=" liste-advert">
+
+    <div class="card-advert" style="width: 18rem;" *ngFor="let advert of adverts">
+        <div>
+            <img src="assets/img/Peugeot3008Card.png" class="card-img-top" alt="Peugeot3008">
+            <div class="card-body">
+                <h5 class="card-title">{{ advert.title}} </h5>
+                <p class="card-text"> {{ advert.description}} </p>
+                <a [routerLink]="[('/advert')]" class="btn btn-primary btn-card"> {{ advert.price}} € <i
+                        class="fas fa-cart-plus"></i></a>
+            </div>
+        </div>
+    </div>
+
+</div>

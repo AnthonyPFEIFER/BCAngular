@@ -1,0 +1,35 @@
+<h1> Ajoutez un Professionnel en toute simplicité !</h1>
+<form #validationProfessional="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="username">Veuillez saisir un nom d'utilisateur. </label>
+        <input type="text" class="form-control" id="username" name="username" required
+            [(ngModel)]="professionalForm.username" #username="ngModel">
+
+        <label for="password">Veuillez saisir un mot de passe. </label>
+        <input type="password" class="form-control" id="password" name="password" required
+            [(ngModel)]="professionalForm.password" #password="ngModel">
+
+        <label for="firstname">Veuillez saisir un prénom pour le Professionnel. </label>
+        <input type="text" class="form-control" id="firstname" name="firstname" required
+            [(ngModel)]="professionalForm.firstname" #firstname="ngModel">
+
+        <label for="lastname">Veuillez saisir un nom de famille pour le Professionnel. </label>
+        <input type="text" class="form-control" id="lastname" name="lastname" required
+            [(ngModel)]="professionalForm.lastname" #lastname="ngModel">
+
+        <label for="email">Veuillez saisir une adresse email pour le Professionnel. </label>
+        <input type="email" class="form-control" id="email" name="email" required [(ngModel)]="professionalForm.email"
+            #email="ngModel">
+
+        <label for="tel">Veuillez saisir un numéro de telephone pour le Professionnel. </label>
+        <input type="tel" class="form-control" id="tel" name="tel" required [(ngModel)]="professionalForm.tel"
+            #tel="ngModel">
+
+        <label for="siret">Veuillez saisir le siret du Professionnel. </label>
+        <input type="text" class="form-control" id="siret" name="siret" required [(ngModel)]="professionalForm.siret"
+            #siret="ngModel">
+        <div>
+            <input id="submitBtn" type="submit" [disabled]="!validationProfessional.valid">
+        </div>
+    </div>
+</form>

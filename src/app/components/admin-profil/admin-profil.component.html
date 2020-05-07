@@ -1,0 +1,12 @@
+<p>admin-profil works!</p>
+<h1>Le site comptabilise un total de {{ proNumber }} professionnels</h1>
+
+<div *ngFor="let professional of professionals">
+    <a [routerLink]="['/professional', professional.id]"> {{ professional.firstname}} - {{ professional.lastname }} </a>
+</div>
+
+<h1>Le site comptabilise un total de {{ garageNumber }} garages</h1>
+
+<div *ngFor="let garage of garages">
+    <p>{{ garage.name }} : {{ garage.address }} - {{garage.city}} ({{ garage.tel }})</p>
+</div>
