@@ -18,8 +18,8 @@ export class AdvertComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params.id;
-    this.advertService.getAdvertsById(this.id).subscribe((data: Advert[]) => {
-      this.adverts = data;
+    this.advertService.getAdvertsById(this.id).subscribe((data: Advert) => {
+      this.advert = data;
     });
   }
 }

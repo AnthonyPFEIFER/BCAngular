@@ -1,4 +1,4 @@
-<h1 class="text-center"> Peugeot 3008 Nouveau </h1>
+<h1 class="text-center"> {{ advert.title }} </h1>
 <div class="carousel">
     <ul class="carousel-items">
         <li class="carousel-item-solo">
@@ -53,27 +53,27 @@
     <div class="row">
         <div class="col-md-4">
             <h3>
-                Mise en circulation:
+                Mise en circulation: {{ advert.dateImmat }}
             </h3>
             <h3>
-                Marque: Peugeot
+                Marque: {{ advert.model.brand.name }}
             </h3>
             <h3>
-                Modele: Joker
+                Modele: {{ advert.model.name }}
             </h3>
         </div>
         <div class="col-md-4">
             <h3>
-                Kilométrage: 100 000 km
+                Kilométrage: {{ advert.km }}
             </h3>
             <h3>
-                Carburant: Diesel
+                Carburant: {{ advert.fuel.type }}
             </h3>
             <h3>
-                Reference de l'annonce: XXXXXX
+                Reference de l'annonce: {{ advert.ref }}
             </h3>
         </div>
-        <div class="col-md-4 price-advert">15 999 €</div>
+        <div class="col-md-4 price-advert"> {{ advert.price }} €</div>
     </div>
 </div>
 <p>
@@ -90,9 +90,4 @@
 </p>
 <div class="text-center">
     <a href="" class="btn btn-info"> Contactez nous pour plus d'informations ! </a>
-</div>
-
-<div *ngFor="let advert of adverts">
-    <p> {{ advert.title}} : {{ advert.description}} - {{ advert.model}}
-        ({{ advert.ref }}) </p>
 </div>
