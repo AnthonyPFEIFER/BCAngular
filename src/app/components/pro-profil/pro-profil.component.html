@@ -3,3 +3,8 @@
 <div *ngFor="let professional of professionals">
     {{ professional.firstname}} - {{ professional.lastname }}
 </div>
+
+<div *ngFor="let garage of garages">
+    <a [routerLink]="['/garage', garage.id]"> {{ garage.name }} : {{ garage.address }} - {{garage.city}}
+        ({{ garage.tel }})</a>
+</div>

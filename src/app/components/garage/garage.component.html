@@ -1,0 +1,11 @@
+<h1> Détails du garage </h1>
+
+<div *ngFor="let garage of garages">
+    Nom : {{ garage.name}} <br>
+    Ville : {{ garage.city }}
+</div>
+
+<div *ngFor="let advert of adverts">
+    <a [routerLink]="['/advert', advert.id]"> {{ advert.title}} : {{ advert.description}} - {{ advert.model}}
+        ({{ advert.ref }})</a>
+</div>

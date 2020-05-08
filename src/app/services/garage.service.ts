@@ -26,7 +26,20 @@ export class GarageService {
         catchError(this.handleError)
       );
   }
-
+  getGaragesById(id: number): Observable<Garage[]> {
+    return this.httpClient.get<Garage[]>(this.garageByIdUrl + '/' + id)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      );
+  }
+  getGaragesByPro(id: number): Observable<Garage[]> {
+    return this.httpClient.get<Garage[]>(this.garageByProUrl + '/' + id)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      );
+  }
   handleError(error) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {

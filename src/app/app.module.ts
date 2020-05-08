@@ -15,6 +15,7 @@ import { AddProComponent } from './components/add-pro/add-pro.component';
 import { LoginComponent } from './components/login/login.component';
 import { AdminProfilComponent } from './components/admin-profil/admin-profil.component';
 import { ProProfilComponent } from './components/pro-profil/pro-profil.component';
+import { GarageComponent } from './components/garage/garage.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { ProProfilComponent } from './components/pro-profil/pro-profil.component
     AddProComponent,
     LoginComponent,
     AdminProfilComponent,
-    ProProfilComponent
+    ProProfilComponent,
+    GarageComponent
   ],
   imports: [
     FormsModule,

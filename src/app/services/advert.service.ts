@@ -29,6 +29,20 @@ export class AdvertService {
         catchError(this.handleError)
       );
   }
+  getAdvertsById(id: number): Observable<Advert[]> {
+    return this.httpClient.get<Advert[]>(this.advertByIdUrl + '/' + id)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      );
+  }
+  getAdvertsByGarage(id: number): Observable<Advert[]> {
+    return this.httpClient.get<Advert[]>(this.advertByGarageUrl + '/' + id)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      );
+  }
 
   handleError(error) {
     let errorMessage = '';

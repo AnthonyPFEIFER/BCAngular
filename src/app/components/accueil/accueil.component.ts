@@ -10,6 +10,7 @@ import { AdvertService } from 'src/app/services/advert.service';
 })
 export class AccueilComponent implements OnInit {
   adverts: Advert[];
+
   constructor(private advertService: AdvertService) { }
 
   ngOnInit(): void {

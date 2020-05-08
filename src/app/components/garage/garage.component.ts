@@ -1,25 +1,32 @@
 import { Component, OnInit } from '@angular/core';
-import { Advert } from 'src/app/models/advert';
+import { Garage } from 'src/app/models/garage';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GarageService } from 'src/app/services/garage.service';
+import { Advert } from 'src/app/models/advert';
 import { AdvertService } from 'src/app/services/advert.service';
 
 @Component({
-  selector: 'app-advert',
-  templateUrl: './advert.component.html',
-  styleUrls: ['./advert.component.css']
+  selector: 'app-garage',
+  templateUrl: './garage.component.html',
+  styleUrls: ['./garage.component.css']
 })
-export class AdvertComponent implements OnInit {
-  advert: Advert;
+export class GarageComponent implements OnInit {
+  garage: Garage;
+  garages: Garage[];
   adverts: Advert[];
   id: number;
+
   // tslint:disable-next-line: max-line-length
   constructor(private route: ActivatedRoute, private garageService: GarageService, private advertService: AdvertService, private router: Router) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.id = this.route.snapshot.params.id;
-    this.advertService.getAdvertsById(this.id).subscribe((data: Advert[]) => {
+    this.garageService.getGaragesById(this.id).subscribe((data: Garage[]) => {
+      this.garages = data;
+    });
+    this.advertService.getAdvertsByGarage(this.id).subscribe((data: Advert[]) => {
       this.adverts = data;
     });
   }
+
 }

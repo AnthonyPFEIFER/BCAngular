@@ -53,7 +53,7 @@
     <div class="row">
         <div class="col-md-4">
             <h3>
-                Mise en circulation: Date
+                Mise en circulation:
             </h3>
             <h3>
                 Marque: Peugeot
@@ -78,14 +78,21 @@
 </div>
 <p>
     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum reprehenderit illum repellendus modi blanditiis?
-    Quasi, quos. Sequi, amet in! Illum magni quaerat nam quo in eaque, tempora aspernatur. Fugit, pariatur?Tempore cum
+    Quasi, quos. Sequi, amet in! Illum magni quaerat nam quo in eaque, tempora aspernatur. Fugit, pariatur?Tempore
+    cum
     quasi quaerat voluptatem maiores consectetur, incidunt omnis vel culpa, dolores doloribus magnam amet laudantium
     aliquam? Vero, ea totam accusantium sed et, impedit ullam possimus, distinctio temporibus modi quas?
     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum reprehenderit illum repellendus modi blanditiis?
-    Quasi, quos. Sequi, amet in! Illum magni quaerat nam quo in eaque, tempora aspernatur. Fugit, pariatur?Tempore cum
+    Quasi, quos. Sequi, amet in! Illum magni quaerat nam quo in eaque, tempora aspernatur. Fugit, pariatur?Tempore
+    cum
     quasi quaerat voluptatem maiores consectetur, incidunt omnis vel culpa, dolores doloribus magnam amet laudantium
     aliquam? Vero, ea totam accusantium sed et, impedit ullam possimus, distinctio temporibus modi quas?
 </p>
 <div class="text-center">
     <a href="" class="btn btn-info"> Contactez nous pour plus d'informations ! </a>
+</div>
+
+<div *ngFor="let advert of adverts">
+    <p> {{ advert.title}} : {{ advert.description}} - {{ advert.model}}
+        ({{ advert.ref }}) </p>
 </div>

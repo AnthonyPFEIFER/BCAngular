@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
   public loginUserData = new Professional();
 
   constructor(private professionalService: ProfessionalService, private router: Router) { }
@@ -17,6 +18,7 @@ export class LoginComponent implements OnInit {
   }
   onSubmit() {
     this.professionalService.login(this.loginUserData.username, this.loginUserData.password).subscribe(data => {
+
       this.router.navigate(['/home']);
     });
   }
