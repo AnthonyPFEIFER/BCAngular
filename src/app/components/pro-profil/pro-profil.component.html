@@ -3,7 +3,6 @@
 <div *ngFor="let garage of garages">
     <a [routerLink]="['/garage', garage.id]"> {{ garage.name }} : {{ garage.address }} - {{garage.city}}
         ({{ garage.tel }})</a>
-    <a class="btn btn-danger m-2" (click)="deleteGarage(garage)"> /!\ Supprimer ce garage /!\
-    </a>
+
 </div>
 <a [routerLink]="['/add-garage/', professional.id]" class="btn btn-success btn-card"> Ajouter un garage </a>

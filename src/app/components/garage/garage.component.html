@@ -9,3 +9,5 @@
     <a [routerLink]="['/advert', advert.id]"> {{ advert.title}} : {{ advert.description}} - {{ advert.model}}
         ({{ advert.ref }})</a>
 </div>
+<a class="btn btn-danger m-2" (click)="deleteGarage(garage)"> /!\ Supprimer ce garage /!\
+</a>

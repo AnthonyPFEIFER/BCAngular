@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { GarageService } from 'src/app/services/garage.service';
 import { Advert } from 'src/app/models/advert';
 import { AdvertService } from 'src/app/services/advert.service';
+import { Professional } from 'src/app/models/professional';
 
 @Component({
   selector: 'app-garage',
@@ -14,6 +15,8 @@ export class GarageComponent implements OnInit {
   garage: Garage;
   garages: Garage[];
   adverts: Advert[];
+  professional: Professional;
+  professionals: Professional[];
   id: number;
 
   // tslint:disable-next-line: max-line-length
@@ -28,5 +31,12 @@ export class GarageComponent implements OnInit {
       this.adverts = data;
     });
   }
-
+  deleteGarage(garage) {
+    this.garageService.deleteGarage(this.id).subscribe(data => {
+      this.garageService.getAllGarages().subscribe((result: Garage[]) => {
+        this.garages = result;
+        this.router.navigate(['/home']);
+      });
+    });
+  }
 }

@@ -25,15 +25,5 @@ export class ProProfilComponent implements OnInit {
     this.garageService.getGaragesByPro(this.id).subscribe((data: Garage[]) => {
       this.garages = data;
     });
-
   }
-  deleteGarage(garage) {
-    this.garageService.deleteGarage(this.id).subscribe(data => {
-      this.garageService.getAllGarages().subscribe((result: Garage[]) => {
-        this.garages = result;
-        this.router.navigate(['/profil-admin']);
-      });
-    });
-  }
-
 }
