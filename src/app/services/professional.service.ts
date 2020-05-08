@@ -55,8 +55,8 @@ export class ProfessionalService {
         catchError(this.handleError)
       );
   }
-  getProfessionalById(id: number): Observable<Professional[]> {
-    return this.httpClient.get<Professional[]>(this.listProByIdUrl + '/' + id).pipe(
+  getProfessionalById(id: number): Observable<Professional> {
+    return this.httpClient.get<Professional>(this.listProByIdUrl + '/' + id).pipe(
       retry(1),
       catchError(this.handleError)
     );

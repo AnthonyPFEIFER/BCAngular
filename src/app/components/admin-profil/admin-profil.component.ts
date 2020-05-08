@@ -38,4 +38,5 @@ export class AdminProfilComponent implements OnInit {
       });
     });
   }
+
 }

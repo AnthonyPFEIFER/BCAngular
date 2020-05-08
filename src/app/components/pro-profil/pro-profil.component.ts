@@ -19,14 +19,21 @@ export class ProProfilComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params.id;
-    this.professionalService.getProfessionalById(this.id).subscribe((data: Professional[]) => {
-      this.professionals = data;
+    this.professionalService.getProfessionalById(this.id).subscribe((data: Professional) => {
+      this.professional = data;
     });
     this.garageService.getGaragesByPro(this.id).subscribe((data: Garage[]) => {
       this.garages = data;
     });
 
   }
-
+  deleteGarage(garage) {
+    this.garageService.deleteGarage(this.id).subscribe(data => {
+      this.garageService.getAllGarages().subscribe((result: Garage[]) => {
+        this.garages = result;
+        this.router.navigate(['/profil-admin']);
+      });
+    });
+  }
 
 }

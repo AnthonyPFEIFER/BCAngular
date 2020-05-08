@@ -1,6 +1,8 @@
+import { Professional } from './professional';
+
 export class Garage {
     id: number;
-    professional: string;
+    professional: Professional;
     name: string;
     tel: string;
     address: string;
@@ -10,8 +12,8 @@ export class Garage {
     adverts: string;
 
     // tslint:disable-next-line: max-line-length
-    constructor(id: number = null, professional: string = null, name: string = null, tel: string = null, address: string = null, city: string = null, postCode: string = null, country: string = null, adverts: string = null, ) {
-        this.id = id;
+    constructor(professional: Professional = null, name: string = null, tel: string = null, address: string = null, city: string = null, postCode: string = null, country: string = null) {
+
         this.professional = professional;
         this.name = name;
         this.tel = tel;
@@ -19,6 +21,5 @@ export class Garage {
         this.city = city;
         this.postCode = postCode;
         this.country = country;
-        this.adverts = adverts;
     }
 }

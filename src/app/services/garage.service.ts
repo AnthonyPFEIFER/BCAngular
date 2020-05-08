@@ -40,6 +40,18 @@ export class GarageService {
         catchError(this.handleError)
       );
   }
+  addGarage(garage: Garage, id: number): Observable<Garage> {
+    return this.httpClient.post<Garage>(this.addGarageUrl + '/' + id, garage).pipe(
+      retry(1),
+      catchError(this.handleError)
+    );
+  }
+  deleteGarage(id: number) {
+    return this.httpClient.delete<Garage>(this.deleteGarageUrl + '/' + id).pipe(
+      retry(1),
+      catchError(this.handleError));
+  }
+
   handleError(error) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {

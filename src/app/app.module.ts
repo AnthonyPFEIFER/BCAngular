@@ -16,6 +16,7 @@ import { LoginComponent } from './components/login/login.component';
 import { AdminProfilComponent } from './components/admin-profil/admin-profil.component';
 import { ProProfilComponent } from './components/pro-profil/pro-profil.component';
 import { GarageComponent } from './components/garage/garage.component';
+import { AddGarageComponent } from './components/add-garage/add-garage.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { GarageComponent } from './components/garage/garage.component';
     LoginComponent,
     AdminProfilComponent,
     ProProfilComponent,
-    GarageComponent
+    GarageComponent,
+    AddGarageComponent
   ],
   imports: [
     FormsModule,

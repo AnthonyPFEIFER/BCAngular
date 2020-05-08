@@ -9,6 +9,7 @@ import { AdminProfilComponent } from './components/admin-profil/admin-profil.com
 import { ProProfilComponent } from './components/pro-profil/pro-profil.component';
 import { AddAdvertsComponent } from './components/add-adverts/add-adverts.component';
 import { GarageComponent } from './components/garage/garage.component';
+import { AddGarageComponent } from './components/add-garage/add-garage.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: AccueilComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'advert', component: AdvertComponent },
   { path: 'add-pro', component: AddProComponent },
   { path: 'add-adverts', component: AddAdvertsComponent },
+  { path: 'add-garage/:id', component: AddGarageComponent },
   { path: 'admin-profil', component: AdminProfilComponent },
   { path: 'pro-profil/:id', component: ProProfilComponent },
   { path: 'pro-profil', component: ProProfilComponent },
