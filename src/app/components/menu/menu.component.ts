@@ -7,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
   constructor() { }
-
+  currentUser = null;
   ngOnInit(): void {
+    this.currentUser = JSON.parse(localStorage.getItem('user'));
+    console.log('currentUser', this.currentUser);
   }
 
 }

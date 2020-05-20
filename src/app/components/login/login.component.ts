@@ -17,9 +17,17 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   onSubmit() {
-    this.professionalService.login(this.loginUserData.username, this.loginUserData.password).subscribe(data => {
+    this.professionalService.login(this.loginUserData.username, this.loginUserData.password).subscribe(user => {
+      if (user) {
+        localStorage.setItem('user', JSON.stringify(user));
+        console.log(JSON.parse(localStorage.getItem('user')));
+        this.router.navigate(['/home']);
+      } else {
+        alert('Votre nom/mot de passe est incorrect !');
+        localStorage.setItem('user', null);
+        JSON.parse(localStorage.getItem('user'));
+      }
 
-      this.router.navigate(['/home']);
     });
   }
 }

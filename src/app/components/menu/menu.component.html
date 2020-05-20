@@ -2,6 +2,8 @@
     <div class="row">
         <div class="col-md-12 logo">Centre'Auto'Ccas</div>
     </div>
+    <div *ngIf="currentUser?.username">Bonjour {{ currentUser.username }}</div>
+    <div *ngIf="!currentUser">Pas connecté</div>
 
     <div class="row menu-accueil header-accueil">
 
