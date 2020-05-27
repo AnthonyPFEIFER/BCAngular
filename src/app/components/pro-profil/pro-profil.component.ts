@@ -26,4 +26,9 @@ export class ProProfilComponent implements OnInit {
       this.garages = data;
     });
   }
+  logout() {
+    localStorage.removeItem('user');
+    this.router.navigate(['/home']);
+    location.reload();
+  }
 }

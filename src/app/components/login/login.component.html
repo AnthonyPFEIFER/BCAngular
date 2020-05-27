@@ -22,3 +22,28 @@
         </form>
     </div>
 </div>
+
+<h2> Si vous êtes administrateur, veuillez vous connecter ici</h2>
+<div class="container">
+    <div class="col-md-8 mx-auto">
+        <h5 class="text-center p-3 text-uppercase">Veuillez-vous connecter</h5>
+        <form #loginAdminForm="ngForm" (ngSubmit)="onSubmitAdmin()" novalidate>
+            <div class="form-group">
+                <label class="font-weight-bold"> Username </label>
+                <input type="text" name="username" #username="ngModel" [(ngModel)]="loginAdminData.username"
+                    class="form-control" required [class.is-invalid]="username.invalid && username.touched">
+                <small *ngIf="username.invalid && username.touched" class="text-danger"> Votre username est obligatoire
+                </small>
+            </div>
+            <div class="form-group">
+                <label class="font-weight-bold"> Password </label>
+                <input type="password" name="password" #password="ngModel" [(ngModel)]="loginAdminData.password"
+                    class="form-control" required [class.is-invalid]="password.invalid && password.touched">
+                <small *ngIf="password.invalid && password.touched" class="text-danger"> Votre password est obligatoire
+                </small>
+            </div>
+            <input type="submit" value="Valider" class="btn btn-primary form-control"
+                [disabled]="loginAdminForm.invalid">
+        </form>
+    </div>
+</div>

@@ -1,8 +1,22 @@
-{{ professional.firstname}} - {{ professional.lastname }}
+<div class="row">
+    <div class="col-md-3">
+        <div><a class="btn btn-menu text-center" href="">Gérer votre compte</a></div>
+        <div><a [routerLink]="['/garages/', professional.id]" class="btn btn-menu text-center">Gérer vos garages</a>
+        </div>
+        <div><a [routerLink]="['/adverts/', professional.id]" class="btn btn-menu text-center">Gérer vos annonces</a>
+        </div>
+        <div><a class="btn btn-menu text-center" (click)="logout()">Se déconnecter</a></div>
+    </div>
 
-<div *ngFor="let garage of garages">
-    <a [routerLink]="['/garage', garage.id]"> {{ garage.name }} : {{ garage.address }} - {{garage.city}}
-        ({{ garage.tel }})</a>
 
+
+    <div class="col-md-9">
+        {{ professional.firstname}} - {{ professional.lastname }}
+
+        <div *ngFor="let garage of garages">
+            <a [routerLink]="['/garage', garage.id]"> {{ garage.name }} : {{ garage.address }} - {{garage.city}}
+                ({{ garage.tel }})</a>
+        </div>
+        <a [routerLink]="['/add-garage/', professional.id]" class="btn btn-success btn-card"> Ajouter un garage </a>
+    </div>
 </div>
-<a [routerLink]="['/add-garage/', professional.id]" class="btn btn-success btn-card"> Ajouter un garage </a>

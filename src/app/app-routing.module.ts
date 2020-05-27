@@ -10,11 +10,15 @@ import { ProProfilComponent } from './components/pro-profil/pro-profil.component
 import { AddAdvertsComponent } from './components/add-adverts/add-adverts.component';
 import { GarageComponent } from './components/garage/garage.component';
 import { AddGarageComponent } from './components/add-garage/add-garage.component';
+import { CgiComponent } from './components/cgi/cgi.component';
+import { AdvertsComponent } from './components/adverts/adverts.component';
+import { GaragesComponent } from './components/garages/garages.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: AccueilComponent },
   { path: 'connexion', component: ConnexionComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'adverts/:id', component: AdvertsComponent },
   { path: 'advert/:id', component: AdvertComponent },
   { path: 'advert', component: AdvertComponent },
   { path: 'add-pro', component: AddProComponent },
@@ -23,9 +27,10 @@ const routes: Routes = [
   { path: 'admin-profil', component: AdminProfilComponent },
   { path: 'pro-profil/:id', component: ProProfilComponent },
   { path: 'pro-profil', component: ProProfilComponent },
+  { path: 'garages/:id', component: GaragesComponent },
   { path: 'garage/:id', component: GarageComponent },
-  { path: 'garage', component: GarageComponent }
-
+  { path: 'garage', component: GarageComponent },
+  { path: 'cgi', component: CgiComponent }
 
 ];
 

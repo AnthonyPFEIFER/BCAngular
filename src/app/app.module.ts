@@ -17,6 +17,9 @@ import { AdminProfilComponent } from './components/admin-profil/admin-profil.com
 import { ProProfilComponent } from './components/pro-profil/pro-profil.component';
 import { GarageComponent } from './components/garage/garage.component';
 import { AddGarageComponent } from './components/add-garage/add-garage.component';
+import { AdvertsComponent } from './components/adverts/adverts.component';
+import { CgiComponent } from './components/cgi/cgi.component';
+import { GaragesComponent } from './components/garages/garages.component';
 
 
 @NgModule({
@@ -32,7 +35,10 @@ import { AddGarageComponent } from './components/add-garage/add-garage.component
     AdminProfilComponent,
     ProProfilComponent,
     GarageComponent,
-    AddGarageComponent
+    AddGarageComponent,
+    AdvertsComponent,
+    CgiComponent,
+    GaragesComponent
   ],
   imports: [
     FormsModule,
