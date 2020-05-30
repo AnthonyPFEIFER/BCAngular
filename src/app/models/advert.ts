@@ -1,24 +1,22 @@
 import { Garage } from './garage';
-import { Fuel } from './fuel';
-import { Model } from './model';
+
 
 export class Advert {
     id: number;
     garage: Garage;
-    fuel: Fuel;
+    fuel: string;
     title: string;
     description: string;
     dateImmat: number;
     km: number;
     price: number;
-    model: Model;
-    pictures: string;
+    model: string;
     ref: string;
-
+    brand: string;
 
     // tslint:disable-next-line: max-line-length
-    constructor(id: number = null, garage = null, fuel = null, title: string = null, description: string = null, dateImmat: number = null, km: number = null, price: number = null, model = null, pictures: string = null, ref: string = null) {
-        this.id = id;
+    constructor(garage: Garage = null, fuel: string = null, title: string = null, description: string = null, dateImmat: number = null, km: number = null, price: number = null, model: string = null, brand: string = null) {
+        // this.id = id;
         this.garage = garage;
         this.fuel = fuel;
         this.title = title;
@@ -27,7 +25,8 @@ export class Advert {
         this.km = km;
         this.price = price;
         this.model = model;
-        this.pictures = pictures;
-        this.ref = ref;
+        this.brand = brand;
+        // this.pictures = pictures;
+        // this.ref = ref;
     }
 }

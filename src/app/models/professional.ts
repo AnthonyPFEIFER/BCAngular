@@ -18,7 +18,6 @@ export class Professional {
         this.email = email;
         this.tel = tel;
         this.siret = siret;
-
     }
 
 }

@@ -44,6 +44,23 @@ export class AdvertService {
         catchError(this.handleError)
       );
   }
+  getAdvertsByPro(id: number): Observable<Advert[]> {
+    return this.httpClient.get<Advert[]>(this.advertByProUrl + '/' + id).pipe(retry(1), catchError(this.handleError));
+  }
+  addAdvert(advert: Advert, id: number): Observable<Advert> {
+    return this.httpClient.post<Advert>(this.addAdvertUrl + '/' + id, advert).pipe(
+      retry(1),
+      catchError(this.handleError)
+    );
+  }
+  editAdvert(advert: Advert, id: number): Observable<Advert> {
+    return this.httpClient.put<Advert>(this.editAdvertUrl + '/' + id, advert).pipe(
+      retry(1),
+      catchError(this.handleError)
+    );
+  }
+
+
 
   handleError(error) {
     let errorMessage = '';

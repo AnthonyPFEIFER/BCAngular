@@ -87,7 +87,6 @@ export class ProfessionalService {
   }
 
   logout() {
-    // remove user from local storage and set current user to null
     localStorage.removeItem('currentUser');
     this.currentProfessionalObject.next(null);
   }

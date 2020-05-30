@@ -3,16 +3,12 @@ export class Admin {
     username: string;
     password: string;
     apiKey: string;
-    roles: string;
 
 
     // tslint:disable-next-line: max-line-length
-    constructor(id: number = null, username: string = null, password: string = null, apiKey: string = null, roles: string = null) {
-        this.id = id;
+    constructor(username: string = null, password: string = null) {
         this.username = username;
         this.password = password;
-        this.apiKey = apiKey;
-        this.roles = roles;
     }
 
 }

@@ -8,21 +8,21 @@ import { Admin } from 'src/app/models/admin';
 })
 export class AdminService {
 
-  loginURL = 'http://localhost/Symfony/BusinessCaseApi/public/index.php/admin/login';
-
   admin: Admin[];
 
-  httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json', 'X-Api-Key': 'ApiKey' })
-  };
+  loginAdminURL = 'http://localhost/Symfony/BusinessCaseApi/public/index.php/login';
+
+
+
   id: number;
   apiKey: string;
   username: string;
   password: string;
-  headers = new HttpHeaders().append('X-Api-Key', 'ApiKey');
   private currentAdminObject: BehaviorSubject<any>;
   public currentUser: Observable<any>;
-
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json', 'X-Api-Key': 'ApiKey' })
+  };
   constructor(private httpClient: HttpClient) {
     this.currentAdminObject = new BehaviorSubject<any>(JSON.parse(localStorage.getItem('currentUser')));
     this.currentUser = this.currentAdminObject.asObservable();
@@ -32,7 +32,8 @@ export class AdminService {
   }
 
   login(username, password): Observable<any> {
-    return this.httpClient.post<any>(`${this.loginURL}`, { username, password })
+    // tslint:disable-next-line: max-line-length
+    return this.httpClient.post<any>(`${this.loginAdminURL}`, { username, password })
       .pipe(
         retry(1),
         catchError(this.handleError)
@@ -40,7 +41,6 @@ export class AdminService {
   }
 
   logout() {
-    // remove user from local storage and set current user to null
     localStorage.removeItem('currentUser');
     this.currentAdminObject.next(null);
   }

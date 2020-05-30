@@ -3,7 +3,7 @@
         <div class="col-md-12 logo">Centre'Auto'Ccas</div>
     </div>
     <div *ngIf="currentUser?.username">Bonjour {{ currentUser.username }}</div>
-    <div *ngIf="!currentUser">Pas connecté</div>
+
 
     <div class="row menu-accueil header-accueil">
 
@@ -14,11 +14,11 @@
             <a class="mr-5" routerLink="add-pro">Ajouter un Professionnel </a>
         </div>
         <div class="col-md-3">
-            <a class="mr-5" routerLink="login">Vous authentifier </a>
+            <a *ngIf="!currentUser" class="mr-5" routerLink="login">Vous authentifier </a>
+            <button *ngIf="currentUser?.username" type="submit" (click)="logout()">Se déconnecter</button>
         </div>
         <div class="col-md-3">
             <a class="mr-5" routerLink="admin-profil">Profil Admin </a>
         </div>
     </div>
-    <button type="submit" (click)="logout()">Se déconnecter</button>
 </header>

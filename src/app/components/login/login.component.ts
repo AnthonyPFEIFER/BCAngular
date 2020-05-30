@@ -53,16 +53,16 @@ export class LoginComponent implements OnInit {
     });
   }
   onSubmitAdmin() {
-    this.adminService.login(this.loginAdminData.username, this.loginAdminData.password).subscribe(user => {
-      if (user) {
-        localStorage.setItem('user', JSON.stringify(user));
-        console.log(JSON.parse(localStorage.getItem('user')));
+    this.adminService.login(this.loginAdminData.username, this.loginAdminData.password).subscribe(admin => {
+      if (admin) {
+        localStorage.setItem('admin', JSON.stringify(admin));
+        console.log(JSON.parse(localStorage.getItem('admin')));
         this.router.navigate(['/home']);
         location.reload();
       } else {
         alert('Votre nom/mot de passe est incorrect !');
-        localStorage.setItem('user', null);
-        JSON.parse(localStorage.getItem('user'));
+        localStorage.setItem('admin', null);
+        JSON.parse(localStorage.getItem('admin'));
       }
 
     });
