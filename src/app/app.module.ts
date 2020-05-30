@@ -20,6 +20,8 @@ import { AddGarageComponent } from './components/add-garage/add-garage.component
 import { AdvertsComponent } from './components/adverts/adverts.component';
 import { CgiComponent } from './components/cgi/cgi.component';
 import { GaragesComponent } from './components/garages/garages.component';
+import { EditProComponent } from './components/edit-pro/edit-pro.component';
+import { EditGarageComponent } from './components/edit-garage/edit-garage.component';
 
 
 @NgModule({
@@ -38,7 +40,9 @@ import { GaragesComponent } from './components/garages/garages.component';
     AddGarageComponent,
     AdvertsComponent,
     CgiComponent,
-    GaragesComponent
+    GaragesComponent,
+    EditProComponent,
+    EditGarageComponent
   ],
   imports: [
     FormsModule,

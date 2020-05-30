@@ -1,0 +1,61 @@
+<form #professionalValidation="ngForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+        <label for="username">Username : </label>
+        <input type="text" class="form-control" id="username" name="username" required
+            [(ngModel)]="editProForm.username" #username="ngModel">
+        <div [hidden]="username.valid" class="alert alert-danger">
+            Veuillez indiquer un "username" valide
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <label for="firstname">Prénom : </label>
+        <input type="text" class="form-control" id="firstname" name="firstname" required
+            [(ngModel)]="editProForm.firstname" #firstname="ngModel">
+        <div [hidden]="firstname.valid" class="alert alert-danger">
+            Veuillez indiquer un "prénom" valide
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="lastname">Nom : </label>
+        <input type="text" class="form-control" id="lastname" name="lastname" required
+            [(ngModel)]="editProForm.lastname" #lastname="ngModel">
+        <div [hidden]="lastname.valid" class="alert alert-danger">
+            Veuillez indiquer un "nom" valide
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="email">Email : </label>
+        <input type="email" class="form-control" id="email" name="Email" required [(ngModel)]="editProForm.email"
+            #email="ngModel">
+        <div [hidden]="email.valid" class="alert alert-danger">
+            Veuillez indiquer un "email" valide
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="tel">Numéro de téléphone : </label>
+        <input type="telephone" class="form-control" id="tel" name="Phone" required [(ngModel)]="editProForm.tel"
+            #tel="ngModel">
+        <div [hidden]="tel.valid" class="alert alert-danger">
+            Veuillez indiquer un "numéro de téléphone" valide
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="siret">Numéro de Siret : </label>
+        <input type="text" class="form-control" id="siret" name="siret" required [(ngModel)]="editProForm.siret"
+            #siret="ngModel">
+        <div [hidden]="siret.valid" class="alert alert-danger">
+            Veuillez indiquer un "numéro de siret" valide
+        </div>
+    </div>
+
+    <div>
+        <input id="submitForm" type="submit" value="Envoyer" class=" form-control btn btn-success col"
+            [disabled]='!professionalValidation.valid'>
+    </div>
+</form>

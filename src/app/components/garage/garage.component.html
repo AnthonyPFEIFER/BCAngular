@@ -1,8 +1,8 @@
 <h1> Détails du garage </h1>
 
-<div *ngFor="let garage of garages">
-    Nom : {{ garage.name}} <br>
-    Ville : {{ garage.city }}
+<div>
+    Nom : {{ garage?.name}} <br>
+    Ville : {{ garage?.city }}
 </div>
 
 <div *ngFor="let advert of adverts">

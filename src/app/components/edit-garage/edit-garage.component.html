@@ -1,0 +1,59 @@
+<form #garageValidation="ngForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+        <label for="name">Nom : </label>
+        <input type="text" class="form-control" id="name" name="name" required [(ngModel)]="editGarageForm.name"
+            #name="ngModel">
+        <div [hidden]="name.valid" class="alert alert-danger">
+            Veuillez indiquer un "nom" valide
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label for="tel">Numéro de téléphone : </label>
+        <input type="telephone" class="form-control" id="tel" name="tel" required [(ngModel)]="editGarageForm.tel"
+            #tel="ngModel">
+        <div [hidden]="tel.valid" class="alert alert-danger">
+            Veuillez indiquer un "numéro de téléphone" valide
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="address">Adresse : </label>
+        <input type="text" class="form-control" id="address" name="address" required
+            [(ngModel)]="editGarageForm.address" #address="ngModel">
+        <div [hidden]="address.valid" class="alert alert-danger">
+            Veuillez indiquer une "adresse" valide
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="city">Ville : </label>
+        <input type="text" class="form-control" id="city" name="city" required [(ngModel)]="editGarageForm.city"
+            #city="ngModel">
+        <div [hidden]="city.valid" class="alert alert-danger">
+            Veuillez indiquer une "ville" valide
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="postCode">Code Postal : </label>
+        <input type="text" class="form-control" id="postCode" name="postCode" required
+            [(ngModel)]="editGarageForm.postCode" #postCode="ngModel">
+        <div [hidden]="postCode.valid" class="alert alert-danger">
+            Veuillez indiquer un "code postal" valide
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="country">Pays : </label>
+        <input type="text" class="form-control" id="country" name="country" required
+            [(ngModel)]="editGarageForm.country" #country="ngModel">
+        <div [hidden]="country.valid" class="alert alert-danger">
+            Veuillez indiquer un "pays" valide
+        </div>
+    </div>
+
+    <div>
+        <input id="submitForm" type="submit" value="Envoyer" class=" form-control btn btn-success col"
+            [disabled]='!garageValidation.valid'>
+    </div>
+</form>

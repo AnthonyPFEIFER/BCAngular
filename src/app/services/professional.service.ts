@@ -73,6 +73,12 @@ export class ProfessionalService {
       catchError(this.handleError)
     );
   }
+  editPro(professional: Professional, id: number) {
+    return this.httpClient.put<Professional>(this.editProUrl + '/' + id, professional).pipe(
+      retry(1),
+      catchError(this.handleError)
+    );
+  }
 
   public get currentUserValue() {
     return this.currentProfessionalObject.value;

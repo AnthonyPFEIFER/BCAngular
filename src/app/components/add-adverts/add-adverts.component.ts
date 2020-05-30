@@ -22,10 +22,10 @@ export class AddAdvertsComponent implements OnInit {
 
   addAdvertForm: Advert;
   professional: Professional;
-  fuel: Fuel[];
-  brand: Brand[];
-  model: Model[];
-  garage: Garage[];
+  fuels: Fuel[];
+  brands: Brand[];
+  models: Model[];
+  garages: Garage[];
   id: number;
 
   // tslint:disable-next-line: max-line-length
@@ -37,16 +37,16 @@ export class AddAdvertsComponent implements OnInit {
       this.professional = data;
     });
     this.fuelService.getAllFuel().subscribe((data: Fuel[]) => {
-      this.fuel = data;
+      this.fuels = data;
     });
     this.brandService.getAllBrands().subscribe((data: Brand[]) => {
-      this.brand = data;
+      this.brands = data;
     });
     this.modelService.getAllModels().subscribe((data: Model[]) => {
-      this.model = data;
+      this.models = data;
     });
     this.garageService.getGaragesByPro(this.id).subscribe((data: Garage[]) => {
-      this.garage = data;
+      this.garages = data;
     });
 
     this.addAdvertForm = new Advert();

@@ -11,6 +11,7 @@ export class AdvertService {
   adverts: Advert[];
   advert: Advert;
   addAdvertUrl = 'http://localhost/Symfony/BusinessCaseApi/public/index.php/pro/advert-add';
+  AddAdvertByProIdUrl = 'http://localhost/Symfony/BusinessCaseApi/public/index.php/pro/addAdvert';
   editAdvertUrl = 'http://localhost/Symfony/BusinessCaseApi/public/index.php/pro/advert-edit';
   deleteAdvertUrl = 'http://localhost/Symfony/BusinessCaseApi/public/index.php/pro/advert-delete';
   listAdvertsUrl = 'http://localhost/Symfony/BusinessCaseApi/public/index.php/adverts';
@@ -48,7 +49,7 @@ export class AdvertService {
     return this.httpClient.get<Advert[]>(this.advertByProUrl + '/' + id).pipe(retry(1), catchError(this.handleError));
   }
   addAdvert(advert: Advert, id: number): Observable<Advert> {
-    return this.httpClient.post<Advert>(this.addAdvertUrl + '/' + id, advert).pipe(
+    return this.httpClient.post<Advert>(this.AddAdvertByProIdUrl + '/' + id, advert).pipe(
       retry(1),
       catchError(this.handleError)
     );

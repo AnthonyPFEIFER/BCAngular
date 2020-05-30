@@ -9,7 +9,6 @@ export class Garage {
     city: string;
     postCode: string;
     country: string;
-    adverts: string;
 
     // tslint:disable-next-line: max-line-length
     constructor(professional: Professional = null, name: string = null, tel: string = null, address: string = null, city: string = null, postCode: string = null, country: string = null) {

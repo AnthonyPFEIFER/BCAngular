@@ -1,1 +1,108 @@
-<p>add-adverts works!</p>
+<div class="container-fluid">
+    <h1>Ajouter une annonce</h1>
+
+    <form #advertValidation="ngForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label for="title">Title : </label>
+            <input type="text" class="form-control" id="title" name="title" required [(ngModel)]="addAdvertForm.title"
+                #title="ngModel">
+            <div [hidden]="title.valid" class="alert alert-danger">
+                Veuillez indiquer un "titre" valide
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description : </label>
+            <textarea type="textarea" class="form-control" id="description" name="description" required
+                [(ngModel)]="addAdvertForm.description" #description="ngModel"> </textarea>
+            <div [hidden]="description.valid" class="alert alert-danger">
+                Veuillez indiquer une "description" valide
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="dateImmat">Année immatriculation : </label>
+            <input type="number" class="form-control" id="dateImmat" name="dateImmat" required
+                [(ngModel)]="addAdvertForm.dateImmat" #dateImmat="ngModel">
+            <div [hidden]="dateImmat.valid" class="alert alert-danger">
+                Veuillez indiquer une "année" valide
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="km">Kilométrage : </label>
+            <input type="number" class="form-control" id="km" name="km" required [(ngModel)]="addAdvertForm.km"
+                #km="ngModel">
+            <div [hidden]="km.valid" class="alert alert-danger">
+                Veuillez indiquer un "kilometrage" valide
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="price">Prix : </label>
+            <input type="number" class="form-control" id="price" name="price" required [(ngModel)]="addAdvertForm.price"
+                #price="ngModel">
+            <div [hidden]="price.valid" class="alert alert-danger">
+                Veuillez indiquer un "prix" valide
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="fuel">Fuel : </label>
+            <select [(ngModel)]="addAdvertForm.fuel" name="fuel" class='form-control' #fuel='ngModel' id='type'
+                required>
+                <option *ngFor="let fuel of fuels" [ngValue]="fuel.type">
+                    {{fuel.type}}
+                </option>
+            </select>
+            <div [hidden]="fuel.valid" class="alert alert-danger">
+                Veuillez indiquer un "carburant" valide
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="brand">Brand : </label>
+            <select [(ngModel)]="addAdvertForm.brand" name="brand" class='form-control' #brand='ngModel' id='brand'
+                required>
+                <option *ngFor="let brand of brands" [ngValue]="brand.name">
+                    {{brand.name}}
+                </option>
+            </select>
+            <div [hidden]="brand.valid" class="alert alert-danger">
+                Veuillez indiquer une "marque" valide
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="model">Modèle : </label>
+            <select [(ngModel)]="addAdvertForm.model" name="model" class='form-control' #model='ngModel' id='model'
+                required>
+                <option *ngFor="let model of models" [ngValue]="model.name">
+                    {{model.name}}
+                </option>
+            </select>
+            <div [hidden]="model.valid" class="alert alert-danger">
+                Veuillez indiquer un "modèle" valide
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="garage">Garage : </label>
+            <select [(ngModel)]="addAdvertForm.garage" name="garage" class='form-control' #garage='ngModel' id='garage'
+                required>
+                <option *ngFor="let garage of garages" [ngValue]="garage.name">
+                    {{garage.name}}
+                </option>
+            </select>
+            <div [hidden]="garage.valid" class="alert alert-danger">
+                Veuillez indiquer un "garage" valide
+            </div>
+        </div>
+
+        <div>
+            <input id="submitForm" type="submit" value="Envoyer" class=" form-control btn btn-success col"
+                [disabled]='!advertValidation.valid'>
+        </div>
+    </form>
+</div>

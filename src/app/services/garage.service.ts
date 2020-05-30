@@ -26,8 +26,8 @@ export class GarageService {
         catchError(this.handleError)
       );
   }
-  getGaragesById(id: number): Observable<Garage[]> {
-    return this.httpClient.get<Garage[]>(this.garageByIdUrl + '/' + id)
+  getGaragesById(id: number): Observable<Garage> {
+    return this.httpClient.get<Garage>(this.garageByIdUrl + '/' + id)
       .pipe(
         retry(1),
         catchError(this.handleError)
@@ -42,6 +42,12 @@ export class GarageService {
   }
   addGarage(garage: Garage, id: number): Observable<Garage> {
     return this.httpClient.post<Garage>(this.addGarageUrl + '/' + id, garage).pipe(
+      retry(1),
+      catchError(this.handleError)
+    );
+  }
+  editGarage(garage: Garage, id: number): Observable<Garage> {
+    return this.httpClient.put<Garage>(this.editGarageUrl + '/' + id, garage).pipe(
       retry(1),
       catchError(this.handleError)
     );

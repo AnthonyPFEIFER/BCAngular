@@ -15,8 +15,6 @@ export class GarageComponent implements OnInit {
   garage: Garage;
   garages: Garage[];
   adverts: Advert[];
-  professional: Professional;
-  professionals: Professional[];
   id: number;
 
   // tslint:disable-next-line: max-line-length
@@ -24,8 +22,8 @@ export class GarageComponent implements OnInit {
 
   ngOnInit() {
     this.id = this.route.snapshot.params.id;
-    this.garageService.getGaragesById(this.id).subscribe((data: Garage[]) => {
-      this.garages = data;
+    this.garageService.getGaragesById(this.id).subscribe((data: Garage) => {
+      this.garage = data;
     });
     this.advertService.getAdvertsByGarage(this.id).subscribe((data: Advert[]) => {
       this.adverts = data;
