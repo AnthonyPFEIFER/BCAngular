@@ -13,7 +13,7 @@ export class AdvertService {
   addAdvertUrl = 'http://localhost/Symfony/BusinessCaseApi/public/index.php/pro/advert-add';
   AddAdvertByProIdUrl = 'http://localhost/Symfony/BusinessCaseApi/public/index.php/pro/addAdvert';
   editAdvertUrl = 'http://localhost/Symfony/BusinessCaseApi/public/index.php/pro/advert-edit';
-  deleteAdvertUrl = 'http://localhost/Symfony/BusinessCaseApi/public/index.php/pro/advert-delete';
+  deleteAdvertUrl = 'http://localhost/Symfony/BusinessCaseApi/public/index.php/pro/delete-advert';
   listAdvertsUrl = 'http://localhost/Symfony/BusinessCaseApi/public/index.php/adverts';
   advertByIdUrl = 'http://localhost/Symfony/BusinessCaseApi/public/index.php/admin/advert';
   advertByGarageUrl = 'http://localhost/Symfony/BusinessCaseApi/public/index.php/admin/advertsByGarage';
@@ -48,6 +48,7 @@ export class AdvertService {
   getAdvertsByPro(id: number): Observable<Advert[]> {
     return this.httpClient.get<Advert[]>(this.advertByProUrl + '/' + id).pipe(retry(1), catchError(this.handleError));
   }
+
   addAdvert(advert: Advert, id: number): Observable<Advert> {
     return this.httpClient.post<Advert>(this.AddAdvertByProIdUrl + '/' + id, advert).pipe(
       retry(1),
@@ -60,7 +61,12 @@ export class AdvertService {
       catchError(this.handleError)
     );
   }
-
+  deleteAdvert(id: number) {
+    return this.httpClient.delete<Advert>(this.deleteAdvertUrl + '/' + id).pipe(
+      retry(1),
+      catchError(this.handleError)
+    );
+  }
 
 
   handleError(error) {

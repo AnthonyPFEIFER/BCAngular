@@ -4,74 +4,73 @@
             <div class="row">
                 <div class="col-md-2 col-6">
                     <div class="btn-group research-bar" role="group">
-                        <button id="" type="button" class="btn btn-light dropdown-toggle btnGroupDrop1"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Marque
-                        </button>
-                        <div class="dropdown-menu " aria-labelledby="btnGroupDrop1">
-                            <a class="dropdown-item" href="#">Peugeot</a>
-                            <a class="dropdown-item" href="#">Renault</a>
-                            <a class="dropdown-item" href="#">Opel</a>
-                            <a class="dropdown-item" href="#">Citroën</a>
-                            <a class="dropdown-item" href="#">Volkswagen</a>
-                            <a class="dropdown-item" href="#">Mercedes</a>
+                        <div class="btn btn-light btnGroupDrop1">
+                            <select name="brand" id='brand' (click)="onSelectBrand()">
+                                <option value=""> -- Marque -- </option>
+                                <option *ngFor="let brand of brands" [ngValue]="brand.name">
+                                    {{brand.name}}
+                                </option>
+                            </select>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-2 col-6">
                     <div class="btn-group research-bar" role="group">
-                        <button id="" type="button" class="btn btn-light dropdown-toggle btnGroupDrop1 "
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Modèle
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                            <a class="dropdown-item" href="#">206</a>
-
+                        <div class="btn btn-light btnGroupDrop1">
+                            <select name="model" id='model'>
+                                <option value=""> -- Modèle -- </option>
+                                <option *ngFor="let model of models" [ngValue]="model.name">
+                                    {{model.name}}
+                                </option>
+                            </select>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-2 col-6">
                     <div class="btn-group research-bar" role="group">
-                        <button id="" type="button" class="btn btn-light dropdown-toggle btnGroupDrop1"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Carburant
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                            <a class="dropdown-item" href="#">Essence</a>
-                            <a class="dropdown-item" href="#">Diesel</a>
+                        <div class="btn btn-light btnGroupDrop1">
+                            <select name="fuel" id='fuel'>
+                                <option value=""> -- Carburant -- </option>
+                                <option *ngFor="let fuel of fuels" [ngValue]="fuel.type">
+                                    {{fuel.type}}
+                                </option>
+                            </select>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-2 col-6">
                     <div class="btn-group research-bar" role="group">
-                        <button id="" type="button" class="btn btn-light dropdown-toggle btnGroupDrop1"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Mise en circulation
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                            <a class="dropdown-item" href="#">2000</a>
+                        <div class="btn btn-light btnGroupDrop1">
+                            <select name="model" id='model'>
+                                <option value=""> -- Mise en circulation -- </option>
+                                <option *ngFor="let advert of adverts" [ngValue]="advert.dateImmat">
+                                    {{advert.dateImmat}}
+                                </option>
+                            </select>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-2 col-6">
                     <div class="btn-group research-bar" role="group">
-                        <button id="" type="button" class="btn btn-light dropdown-toggle btnGroupDrop1"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Kilométrage
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                            <a class="dropdown-item" href="#">50000 km</a>
+                        <div class="btn btn-light btnGroupDrop1">
+                            <select name="model" id='model'>
+                                <option value=""> -- Kilométrage -- </option>
+                                <option *ngFor="let advert of adverts" [ngValue]="advert.km">
+                                    {{advert.km}}
+                                </option>
+                            </select>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-2 col-6">
                     <div class="btn-group research-bar" role="group">
-                        <button id="" type="button" class="btn btn-light dropdown-toggle btnGroupDrop1"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Prix
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                            <a class="dropdown-item" href="#">2000 €</a>
+                        <div class="btn btn-light btnGroupDrop1">
+                            <select name="model" id='model'>
+                                <option value=""> -- Prix -- </option>
+                                <option *ngFor="let advert of adverts" [ngValue]="advert.price">
+                                    {{advert.price}}
+                                </option>
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -89,7 +88,9 @@
     </div>
 </div>
 
-<div class=" liste-advert">
+
+
+<div class=" liste-advert" *ngIf="!selectedAdvert">
 
     <div class="card-advert" style="width: 18rem;" *ngFor="let advert of adverts">
         <div>
@@ -103,4 +104,15 @@
         </div>
     </div>
 
+</div>
+
+
+<div *ngIf="selectedAdvert">
+    <h2>{{selectedAdvert.title}} Details</h2>
+    <div><span>id: </span>{{selectedAdvert.id}}</div>
+    <div>
+        <label>title:
+            <input [(ngModel)]="selectedAdvert.title" placeholder="title" />
+        </label>
+    </div>
 </div>

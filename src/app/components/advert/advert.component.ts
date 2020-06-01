@@ -22,4 +22,12 @@ export class AdvertComponent implements OnInit {
       this.advert = data;
     });
   }
+  deleteAdvert(advert) {
+    this.advertService.deleteAdvert(this.id).subscribe(data => {
+      this.advertService.getAllAdverts().subscribe((result: Advert[]) => {
+        this.adverts = result;
+        this.router.navigate(['/home']);
+      });
+    });
+  }
 }

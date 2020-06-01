@@ -1,4 +1,4 @@
-<h1 class="text-center"> {{ advert.title }} </h1>
+<h1 class="text-center"> {{ advert?.title }} </h1>
 <div class="carousel">
     <ul class="carousel-items">
         <li class="carousel-item-solo">
@@ -53,27 +53,27 @@
     <div class="row">
         <div class="col-md-4">
             <h3>
-                Mise en circulation: {{ advert.dateImmat }}
+                Mise en circulation: {{ advert?.dateImmat }}
             </h3>
             <h3>
-                Marque: {{ advert.model.brand.name }}
+                Marque: {{ advert?.model.brand.name }}
             </h3>
             <h3>
-                Modele: {{ advert.model.name }}
+                Modele: {{ advert?.model.name }}
             </h3>
         </div>
         <div class="col-md-4">
             <h3>
-                Kilométrage: {{ advert.km }}
+                Kilométrage: {{ advert?.km }}
             </h3>
             <h3>
-                Carburant: {{ advert.fuel.type }}
+                Carburant: {{ advert?.fuel.type }}
             </h3>
             <h3>
-                Reference de l'annonce: {{ advert.ref }}
+                Reference de l'annonce: {{ advert?.ref }}
             </h3>
         </div>
-        <div class="col-md-4 price-advert"> {{ advert.price }} €</div>
+        <div class="col-md-4 price-advert"> {{ advert?.price }} €</div>
     </div>
 </div>
 <p>
@@ -90,4 +90,7 @@
 </p>
 <div class="text-center">
     <a href="" class="btn btn-info"> Contactez nous pour plus d'informations ! </a>
+</div>
+<div>
+    <button class="btn btn-danger m-2" (click)="deleteAdvert(advert)"> Supprimer cette annonce </button>
 </div>

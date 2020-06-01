@@ -22,6 +22,7 @@ import { CgiComponent } from './components/cgi/cgi.component';
 import { GaragesComponent } from './components/garages/garages.component';
 import { EditProComponent } from './components/edit-pro/edit-pro.component';
 import { EditGarageComponent } from './components/edit-garage/edit-garage.component';
+import { SearchPipe } from './pipes/search.pipe';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { EditGarageComponent } from './components/edit-garage/edit-garage.compon
     CgiComponent,
     GaragesComponent,
     EditProComponent,
-    EditGarageComponent
+    EditGarageComponent,
+    SearchPipe
   ],
   imports: [
     FormsModule,
