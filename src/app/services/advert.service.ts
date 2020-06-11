@@ -4,6 +4,9 @@ import { Observable, throwError } from 'rxjs/index';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, retry } from 'rxjs/internal/operators';
 import { HttpClientModule } from '@angular/common/http';
+import { Fuel } from '../models/fuel';
+import { Brand } from '../models/brand';
+import { Model } from 'src/app/models/model';
 @Injectable({
   providedIn: 'root'
 })
@@ -67,7 +70,13 @@ export class AdvertService {
       catchError(this.handleError)
     );
   }
-
+  searchAdverts(/* fuel: string, dateImmat: number, km: number, price: number, model: string, brand: string */): Observable<Advert[]> {
+    return this.httpClient.get<Advert[]>(this.filterUrl)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      );
+  }
 
   handleError(error) {
     let errorMessage = '';

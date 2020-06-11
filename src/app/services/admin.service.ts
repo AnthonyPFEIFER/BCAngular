@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpInterceptor } from '@angular/common/http';
 import { BehaviorSubject, Observable, throwError } from 'rxjs/index';
 import { catchError, retry } from 'rxjs/internal/operators';
 import { Admin } from 'src/app/models/admin';
@@ -20,9 +20,11 @@ export class AdminService {
   password: string;
   private currentAdminObject: BehaviorSubject<any>;
   public currentUser: Observable<any>;
+
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json', 'X-Api-Key': 'ApiKey' })
   };
+
   constructor(private httpClient: HttpClient) {
     this.currentAdminObject = new BehaviorSubject<any>(JSON.parse(localStorage.getItem('currentUser')));
     this.currentUser = this.currentAdminObject.asObservable();
@@ -31,9 +33,10 @@ export class AdminService {
     return this.currentAdminObject.value;
   }
 
+
+
   login(username, password): Observable<any> {
-    // tslint:disable-next-line: max-line-length
-    return this.httpClient.post<any>(`${this.loginAdminURL}`, { username, password })
+    return this.httpClient.post<any>(`${this.loginAdminURL}`, { username, password }, this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.handleError)

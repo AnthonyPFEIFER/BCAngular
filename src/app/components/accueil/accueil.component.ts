@@ -15,13 +15,16 @@ import { ModelService } from 'src/app/services/model.service';
   styleUrls: ['./accueil.component.css']
 })
 export class AccueilComponent implements OnInit {
+  advert: Advert;
   adverts: Advert[];
-
+  donneesSource = this.adverts;
   fuels: Fuel[];
   brands: Brand[];
   brand: Brand;
   models: Model[];
-  selectedAdvert: Advert;
+
+
+  // tslint:disable-next-line: variable-name
 
 
   // tslint:disable-next-line: max-line-length
@@ -41,8 +44,22 @@ export class AccueilComponent implements OnInit {
     this.modelService.getAllModels().subscribe((data: Model[]) => {
       this.models = data;
     });
+
   }
-  onSelectBrand(selectedBrand: Brand): void {
-    this.brand = this.brand;
+  OnResearch(filterTab): void {
+
+    this.advertService.getAllAdverts().subscribe((data: Advert[]) => {
+      this.adverts = data.filter(filterTab);
+    },
+      error => console.log(error));
+  }
+  callFiltreFuel(fuel) {
+    let donneesFiltered;
+    this.advertService.getAllAdverts().subscribe((data: Advert[]) => {
+      this.adverts = data;
+      donneesFiltered = this.donneesSource.filter(data => data.fuel === 'Diesel');
+      console.log(donneesFiltered);
+    });
+
   }
 }
