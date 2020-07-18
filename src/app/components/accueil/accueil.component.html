@@ -30,7 +30,7 @@
                     <div class="col-md-2 col-6">
                         <div class="btn-group research-bar" role="group">
                             <div class="btn btn-light btnGroupDrop1">
-                                <select name="fuel" id='fuel' (change)="callFiltreFuel(fuels)">
+                                <select name="fuel" id='fuel'>
                                     <option value=""> -- Carburant -- </option>
                                     <option *ngFor="let fuel of fuels" [ngValue]="fuel.type">
                                         {{fuel.type}}

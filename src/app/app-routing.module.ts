@@ -15,6 +15,7 @@ import { AdvertsComponent } from './components/adverts/adverts.component';
 import { GaragesComponent } from './components/garages/garages.component';
 import { EditProComponent } from './components/edit-pro/edit-pro.component';
 import { EditGarageComponent } from './components/edit-garage/edit-garage.component';
+import { EditAdvertComponent } from './components/edit-advert/edit-advert.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: AccueilComponent },
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'add-garage/:id', component: AddGarageComponent },
   { path: 'edit-pro/:id', component: EditProComponent },
   { path: 'edit-garage/:id', component: EditGarageComponent },
+  { path: 'edit-advert/:id', component: EditAdvertComponent },
   { path: 'admin-profil', component: AdminProfilComponent },
   { path: 'pro-profil/:id', component: ProProfilComponent },
   { path: 'garages/:id', component: GaragesComponent },

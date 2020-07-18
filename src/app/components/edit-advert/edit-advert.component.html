@@ -1,0 +1,60 @@
+<form #advertValidation="ngForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+        <label for="title">Titre : </label>
+        <input type="text" class="form-control" id="title" name="title" required [(ngModel)]="editAdvertForm.title"
+            #title="ngModel">
+        <div [hidden]="title.valid" class="alert alert-danger">
+            Veuillez indiquer un titre valide pour l'annonce
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="description">Description : </label>
+        <input type="textarea" class="form-control" id="description" name="description" required
+            [(ngModel)]="editAdvertForm.description" #description="ngModel">
+        <div [hidden]="description.valid" class="alert alert-danger">
+            Veuillez indiquer une description valide
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="brand">Marque : </label>
+        <select [(ngModel)]="editAdvertForm.brand" name="brand" class='form-control' #brand='ngModel' id='brand'
+            required>
+            <option *ngFor="let brand of brands" [ngValue]="brand.name">
+                {{brand.name}}
+            </option>
+        </select>
+        <div [hidden]="brand.valid" class="alert alert-danger">
+            Veuillez indiquer une marque valide
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="km">Kilométrage : </label>
+        <input type="number" class="form-control" id="km" name="km" required [(ngModel)]="editAdvertForm.km"
+            #km="ngModel">
+        <div [hidden]="km.valid" class="alert alert-danger">
+            Veuillez indiquer un kilométrage valide
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="price">Prix : </label>
+        <input type="number" class="form-control" id="price" name="price" required [(ngModel)]="editAdvertForm.price"
+            #price="ngModel">
+        <div [hidden]="price.valid" class="alert alert-danger">
+            Veuillez indiquer un prix pour cette voiture
+        </div>
+    </div>
+    <!--     <div class="form-group">
+        <label for="picture">Code Postal : </label>
+        <input type="text" class="form-control" id="picture" name="picture" required
+            [(ngModel)]="editAdvertForm.picture" #picture="ngModel">
+        <div [hidden]="picture.valid" class="alert alert-danger">
+            Veuillez insérer une image valide.
+        </div>
+    </div> -->
+
+    <div>
+        <input id="submitForm" type="submit" value="Envoyer" class=" form-control btn btn-success col"
+            [disabled]='!advertValidation.valid'>
+    </div>
+</form>

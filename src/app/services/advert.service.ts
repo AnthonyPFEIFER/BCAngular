@@ -13,12 +13,13 @@ import { Model } from 'src/app/models/model';
 export class AdvertService {
   adverts: Advert[];
   advert: Advert;
-  addAdvertUrl = 'http://localhost/Symfony/BusinessCaseApi/public/index.php/pro/advert-add';
+  /*   addAdvertUrl = 'http://localhost/Symfony/BusinessCaseApi/public/index.php/pro/advert-add'; */
   AddAdvertByProIdUrl = 'http://localhost/Symfony/BusinessCaseApi/public/index.php/pro/addAdvert';
   editAdvertUrl = 'http://localhost/Symfony/BusinessCaseApi/public/index.php/pro/advert-edit';
+  editAdvertByIdUrl = 'http://localhost/Symfony/BusinessCaseApi/public/index.php/pro/edit-advert';
   deleteAdvertUrl = 'http://localhost/Symfony/BusinessCaseApi/public/index.php/pro/delete-advert';
   listAdvertsUrl = 'http://localhost/Symfony/BusinessCaseApi/public/index.php/adverts';
-  advertByIdUrl = 'http://localhost/Symfony/BusinessCaseApi/public/index.php/admin/advert';
+  /*   advertByIdUrl = 'http://localhost/Symfony/BusinessCaseApi/public/index.php/admin/advert'; */
   advertByGarageUrl = 'http://localhost/Symfony/BusinessCaseApi/public/index.php/admin/advertsByGarage';
   advertByProUrl = 'http://localhost/Symfony/BusinessCaseApi/public/index.php/admin/advertsByPro';
   countAdvertsUrl = 'http://localhost/Symfony/BusinessCaseApi/public/index.php/pro/adverts-number';
@@ -59,7 +60,7 @@ export class AdvertService {
     );
   }
   editAdvert(advert: Advert, id: number): Observable<Advert> {
-    return this.httpClient.put<Advert>(this.editAdvertUrl + '/' + id, advert).pipe(
+    return this.httpClient.put<Advert>(this.editAdvertByIdUrl + '/' + id, advert).pipe(
       retry(1),
       catchError(this.handleError)
     );

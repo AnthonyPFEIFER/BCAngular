@@ -46,20 +46,20 @@ export class AccueilComponent implements OnInit {
     });
 
   }
-  OnResearch(filterTab): void {
+  OnResearch(): void {
 
-    this.advertService.getAllAdverts().subscribe((data: Advert[]) => {
-      this.adverts = data.filter(filterTab);
+    this.advertService.searchAdverts().subscribe((data: Advert[]) => {
+      this.adverts = data;
     },
       error => console.log(error));
   }
-  callFiltreFuel(fuel) {
-    let donneesFiltered;
-    this.advertService.getAllAdverts().subscribe((data: Advert[]) => {
-      this.adverts = data;
-      donneesFiltered = this.donneesSource.filter(data => data.fuel === 'Diesel');
-      console.log(donneesFiltered);
-    });
+  /*   callFiltreFuel(fuel) {
+      let donneesFiltered;
+      this.advertService.getAllAdverts().subscribe((data: Advert[]) => {
+        this.adverts = data;
+        donneesFiltered = this.donneesSource.filter(data => data.fuel === 'Diesel');
+        console.log(donneesFiltered);
+      });
 
-  }
+}   */
 }

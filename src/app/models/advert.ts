@@ -13,9 +13,10 @@ export class Advert {
     model: string;
     ref: string;
     brand: string;
+    picture: string;
 
     // tslint:disable-next-line: max-line-length
-    constructor(garage: Garage = null, fuel: string = null, title: string = null, description: string = null, dateImmat: number = null, km: number = null, price: number = null, model: string = null, brand: string = null) {
+    constructor(garage: Garage = null, fuel: string = null, title: string = null, description: string = null, dateImmat: number = null, km: number = null, price: number = null, model: string = null, brand: string = null, picture: string = null) {
         // this.id = id;
         this.garage = garage;
         this.fuel = fuel;
@@ -26,7 +27,7 @@ export class Advert {
         this.price = price;
         this.model = model;
         this.brand = brand;
-        // this.pictures = pictures;
+        this.picture = picture;
         // this.ref = ref;
     }
 }
