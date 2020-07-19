@@ -3,9 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable, throwError } from 'rxjs/index';
 import { catchError, retry } from 'rxjs/internal/operators';
 import { Professional } from 'src/app/models/professional';
-import { map } from 'rxjs/operators';
-import { HttpClientModule } from '@angular/common/http';
-
 @Injectable({
   providedIn: 'root'
 })

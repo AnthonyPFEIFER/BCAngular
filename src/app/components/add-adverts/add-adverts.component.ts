@@ -71,7 +71,6 @@ export class AddAdvertsComponent implements OnInit {
 
   onUpload() {
     const uploadData = new FormData();
-
     this.pictureService.addPicture(this.selectedFile)
       .subscribe(event => {
         this.addAdvertForm.picture = event.file;

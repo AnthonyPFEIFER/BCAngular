@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ProfessionalService } from 'src/app/services/professional.service';
-import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 @Component({
   selector: 'app-connexion',
   templateUrl: './connexion.component.html',

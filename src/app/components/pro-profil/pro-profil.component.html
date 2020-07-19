@@ -5,11 +5,12 @@
         </div>
         <div><a [routerLink]="['/adverts/', professional.id]" class="btn btn-menu text-center">Gérer vos annonces</a>
         </div>
-        <div><a class="btn btn-menu text-center" (click)="logout()">Se déconnecter</a></div>
+        <div><a [routerLink]="['/add-garage/', professional?.id]" class="btn btn-menu text-center" (click)="logout()">Se
+                déconnecter</a></div>
     </div>
 
 
-    <div class="col-md-9">
+    <!--     <div class="col-md-9">
         {{ professional?.firstname}} - {{ professional?.lastname }}
 
         <div *ngFor="let garage of garages">
@@ -17,5 +18,5 @@
                 ({{ garage.tel }})</a>
         </div>
         <a [routerLink]="['/add-garage/', professional?.id]" class="btn btn-success btn-card"> Ajouter un garage </a>
-    </div>
+    </div> -->
 </div>

@@ -42,8 +42,14 @@ export class LoginComponent implements OnInit {
       if (user) {
         localStorage.setItem('user', JSON.stringify(user));
         console.log(JSON.parse(localStorage.getItem('user')));
-        this.router.navigate(['/home']);
-        location.reload();
+
+        setTimeout(() => {
+          this.router.navigate(['/home']);
+        }, 1000);
+        setTimeout(() => {
+          location.reload();
+        }, 2000);
+
       } else {
         alert('Votre nom/mot de passe est incorrect !');
         localStorage.setItem('user', null);

@@ -11,11 +11,11 @@
             <a class="mr-5" routerLink="home">Accueil </a>
         </div>
         <div class="col-md-3">
-            <a class="mr-5" routerLink="add-pro">Ajouter un Professionnel </a>
+            <a *ngIf="currentUser?.username" [routerLink]="['/pro-profil', currentUser?.id]">Mon profil</a>
         </div>
         <div class="col-md-3">
-            <a *ngIf="!currentUser" class="mr-5" routerLink="login">Vous authentifier </a>
-            <button *ngIf="currentUser?.username" type="submit" (click)="logout()">Se déconnecter</button>
+            <a *ngIf="!currentUser" class="mr-5" routerLink="login">M'authentifier </a>
+            <button *ngIf="currentUser?.username" type="submit" (click)="logout()">Me déconnecter</button>
         </div>
         <div class="col-md-3">
             <a class="mr-5" routerLink="admin-profil">Profil Admin </a>

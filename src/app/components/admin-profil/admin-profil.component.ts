@@ -4,6 +4,8 @@ import { Professional } from 'src/app/models/professional';
 import { Garage } from 'src/app/models/garage';
 import { GarageService } from 'src/app/services/garage.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Advert } from 'src/app/models/advert';
+import { AdvertService } from 'src/app/services/advert.service';
 @Component({
   selector: 'app-admin-profil',
   templateUrl: './admin-profil.component.html',
@@ -12,13 +14,16 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class AdminProfilComponent implements OnInit {
   professional: Professional;
   professionals: Professional[];
+  advert: Advert;
+  adverts: Advert[];
   id: number;
   garages: Garage[];
   proNumber: number;
   garageNumber: number;
+  advertNumber: number;
 
   // tslint:disable-next-line: max-line-length
-  constructor(private route: ActivatedRoute, private router: Router, private professionalService: ProfessionalService, private garageService: GarageService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private professionalService: ProfessionalService, private garageService: GarageService, private advertService: AdvertService) { }
 
   ngOnInit() {
     this.professionalService.getAllProfessionals().subscribe((data: Professional[]) => {
@@ -28,6 +33,10 @@ export class AdminProfilComponent implements OnInit {
     this.garageService.getAllGarages().subscribe((data: Garage[]) => {
       this.garages = data;
       this.garageNumber = this.garages.length;
+    });
+    this.advertService.getAllAdverts().subscribe((data: Advert[]) => {
+      this.adverts = data;
+      this.advertNumber = this.adverts.length;
     });
   }
   deleteProfessional(id: number) {

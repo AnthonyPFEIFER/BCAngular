@@ -8,9 +8,13 @@
     </a>
 </div>
 
-<h1>Le site comptabilise un total de {{ garageNumber }} garages</h1>
+<a class="mr-5" [routerLink]="['/add-pro']">Ajouter un Professionnel </a>
+
+<h2>Le site comptabilise un total de {{ garageNumber }} garages</h2>
 
 <div *ngFor="let garage of garages">
     <a [routerLink]="['/garage', garage.id]"> {{ garage.name }} : {{ garage.address }} - {{garage.city}}
         ({{ garage.tel }})</a>
 </div>
+
+<h2>Le site comptabilise un total de {{ advertNumber }} annonces</h2>

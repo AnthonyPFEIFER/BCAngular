@@ -1,12 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Advert } from 'src/app/models/advert';
 import { Observable, throwError } from 'rxjs/index';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { catchError, retry } from 'rxjs/internal/operators';
-import { HttpClientModule } from '@angular/common/http';
-import { Fuel } from '../models/fuel';
-import { Brand } from '../models/brand';
-import { Model } from 'src/app/models/model';
 @Injectable({
   providedIn: 'root'
 })

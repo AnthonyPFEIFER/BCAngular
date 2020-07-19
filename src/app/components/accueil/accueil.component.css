@@ -6,13 +6,11 @@
 .menu-accueil{
     margin: 0 2%;
     list-style: none;
+    text-align: center;
 }
 .header-accueil, .header-accueil a{
     background-color: #0070DD;
     color: white;
-}
-.menu-accueil{
-    text-align: center;
 }
 .logo{
     color: rgb(250, 218, 76);

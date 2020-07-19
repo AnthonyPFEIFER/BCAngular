@@ -4,7 +4,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { GarageService } from 'src/app/services/garage.service';
 import { Advert } from 'src/app/models/advert';
 import { AdvertService } from 'src/app/services/advert.service';
-import { Professional } from 'src/app/models/professional';
 
 @Component({
   selector: 'app-garage',

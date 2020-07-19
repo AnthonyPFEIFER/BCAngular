@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Professional } from 'src/app/models/professional';
 import { ProfessionalService } from 'src/app/services/professional.service';
 import { Router } from '@angular/router';
-import { FormsModule, NgForm } from '@angular/forms';
 @Component({
   selector: 'app-add-pro',
   templateUrl: './add-pro.component.html',

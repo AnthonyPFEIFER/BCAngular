@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { catchError, retry } from 'rxjs/internal/operators';
 import { Garage } from 'src/app/models/garage';
 import { Observable, throwError } from 'rxjs';

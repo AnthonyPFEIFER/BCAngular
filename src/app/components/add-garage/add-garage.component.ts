@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Garage } from 'src/app/models/garage';
 import { GarageService } from 'src/app/services/garage.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { FormsModule, NgForm } from '@angular/forms';
 import { Professional } from 'src/app/models/professional';
 import { ProfessionalService } from 'src/app/services/professional.service';
 @Component({
@@ -30,7 +29,12 @@ export class AddGarageComponent implements OnInit {
   }
   onSubmit() {
     this.garageService.addGarage(this.garageForm, this.id).subscribe(data => {
-      this.router.navigate(['/home']);
+      setTimeout(() => {
+        this.router.navigate(['/pro-profil/', this.professional.id]);
+      }, 1000);
+      setTimeout(() => {
+        location.reload();
+      }, 2000);
     });
   }
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpInterceptor } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable, throwError } from 'rxjs/index';
 import { catchError, retry } from 'rxjs/internal/operators';
 import { Admin } from 'src/app/models/admin';

@@ -19,7 +19,12 @@ export class MenuComponent implements OnInit {
   }
   logout() {
     localStorage.removeItem('user');
-    this.router.navigate(['/home']);
-    location.reload();
+
+    setTimeout(() => {
+      this.router.navigate(['/home']);
+    }, 1000);
+    setTimeout(() => {
+      location.reload();
+    }, 2000);
   }
 }
