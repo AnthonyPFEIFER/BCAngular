@@ -7,7 +7,7 @@ import { GarageService } from 'src/app/services/garage.service';
 @Component({
   selector: 'app-pro-profil',
   templateUrl: './pro-profil.component.html',
-  styleUrls: ['./pro-profil.component.css']
+  styleUrls: ['./pro-profil.component.scss']
 })
 export class ProProfilComponent implements OnInit {
   professional: Professional;

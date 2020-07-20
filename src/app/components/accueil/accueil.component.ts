@@ -12,7 +12,7 @@ import { ModelService } from 'src/app/services/model.service';
 @Component({
   selector: 'app-accueil',
   templateUrl: './accueil.component.html',
-  styleUrls: ['./accueil.component.css']
+  styleUrls: ['./accueil.component.scss']
 })
 export class AccueilComponent implements OnInit {
   advert: Advert;

@@ -1,1 +1,18 @@
-<p>adverts works!</p>
+<div>
+    <a [routerLink]="['/add-advert/', professional?.id]" class="btn btn-add"> Ajouter une annonce </a>
+</div>
+<div class=" liste-advert">
+
+    <div class="card-advert" style="width: 18rem;" *ngFor="let advert of adverts">
+        <div>
+            <img src="assets/img/Peugeot3008Card.png" class="card-img-top" alt="Peugeot3008">
+            <div class="card-body">
+                <h5 [routerLink]="['/advert', advert.id]" class="card-title">{{ advert.title}} </h5>
+                <p class="card-text"> {{ advert.description}} </p>
+                <a [routerLink]="['/advert', advert.id]" class="btn btn-primary btn-card"> {{ advert.price}} € <em
+                        class="fas fa-cart-plus"></em></a>
+            </div>
+        </div>
+    </div>
+
+</div>

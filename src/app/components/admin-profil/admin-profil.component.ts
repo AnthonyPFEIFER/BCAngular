@@ -9,7 +9,7 @@ import { AdvertService } from 'src/app/services/advert.service';
 @Component({
   selector: 'app-admin-profil',
   templateUrl: './admin-profil.component.html',
-  styleUrls: ['./admin-profil.component.css']
+  styleUrls: ['./admin-profil.component.scss']
 })
 export class AdminProfilComponent implements OnInit {
   professional: Professional;

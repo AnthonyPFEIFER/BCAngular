@@ -8,7 +8,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-edit-garage',
   templateUrl: './edit-garage.component.html',
-  styleUrls: ['./edit-garage.component.css']
+  styleUrls: ['./edit-garage.component.scss']
 })
 export class EditGarageComponent implements OnInit {
 
@@ -34,5 +34,14 @@ export class EditGarageComponent implements OnInit {
     this.garageService.editGarage(this.editGarageForm, this.id).subscribe(data => {
       this.router.navigate(['/home']);
     });
+  }
+  logout() {
+    localStorage.removeItem('user');
+    setTimeout(() => {
+      this.router.navigate(['/home']);
+    }, 1000);
+    setTimeout(() => {
+      location.reload();
+    }, 2000);
   }
 }

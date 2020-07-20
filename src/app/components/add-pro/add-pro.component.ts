@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-add-pro',
   templateUrl: './add-pro.component.html',
-  styleUrls: ['./add-pro.component.css']
+  styleUrls: ['./add-pro.component.scss']
 })
 export class AddProComponent implements OnInit {
   professionalForm: Professional;

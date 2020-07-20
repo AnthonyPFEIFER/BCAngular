@@ -8,7 +8,7 @@ import { GarageService } from 'src/app/services/garage.service';
 @Component({
   selector: 'app-garages',
   templateUrl: './garages.component.html',
-  styleUrls: ['./garages.component.css']
+  styleUrls: ['./garages.component.scss']
 })
 export class GaragesComponent implements OnInit {
   professional: Professional;

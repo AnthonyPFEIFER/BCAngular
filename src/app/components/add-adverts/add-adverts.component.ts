@@ -18,7 +18,7 @@ import { Picture } from 'src/app/models/picture';
 @Component({
   selector: 'app-add-adverts',
   templateUrl: './add-adverts.component.html',
-  styleUrls: ['./add-adverts.component.css']
+  styleUrls: ['./add-adverts.component.scss']
 })
 export class AddAdvertsComponent implements OnInit {
 

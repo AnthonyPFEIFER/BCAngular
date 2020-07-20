@@ -1,5 +1,6 @@
+@import './../../../styles.scss';
 .btn-menu{
-    background-color: rgb(99, 188, 190);
+    background-color: $profil_menu;
     width: 80%;
     height: 100px;
     margin-bottom: 20px;
@@ -18,3 +19,7 @@
 .header-accueil{
     margin-bottom: 0px;
 }
+a:hover, button:hover {
+    color: $tertiary_color !important ;
+    text-decoration: none;
+  }

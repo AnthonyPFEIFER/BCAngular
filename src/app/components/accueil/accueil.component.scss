@@ -1,0 +1,56 @@
+@import './../../../styles.scss';
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    font-size: 1.5rem;
+}
+a:hover {
+    color: $tertiary_color !important ;
+    text-decoration: none;
+  }
+
+.btnGroupDrop1{
+    border: 1px solid $tertiary_color;
+}
+.search-btn{
+    padding: 10px 15px;
+    background-color: $tertiary_color;
+    display: block;
+    margin: auto;
+    border-radius: 20px;
+    border: 0.5px solid black;
+}
+.col-md-2{
+    width: 60px;
+    text-align: center;
+}
+header{
+    margin-bottom: 20px;
+}
+
+
+/* Debut Card */
+.card-advert{
+    display: inline-block;
+    margin: 30px 5% 20px 40px;
+    .card-img-top{
+        border-radius: 25px;
+    }
+    .card-title{
+        text-align: center;
+        font-weight: bold;
+    }
+    .card-text{
+        text-align: center;
+    }
+    .btn-card{
+        background-color: $secondary_color;
+        width: 80%;
+        display: block;
+        margin: auto;
+    }
+}
+/* Fin Card */ 

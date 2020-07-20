@@ -1,12 +1,13 @@
 <div class="row">
     <div class="col-md-3">
-        <div><a class="btn btn-menu text-center" href="">Gérer votre compte</a></div>
-        <div><a [routerLink]="['/garages/', professional.id]" class="btn btn-menu text-center">Gérer vos garages</a>
+        <div><a class="btn btn-menu text-center" [routerLink]="['/edit-pro/', professional.id]">Gérer mon compte</a>
         </div>
-        <div><a [routerLink]="['/adverts/', professional.id]" class="btn btn-menu text-center">Gérer vos annonces</a>
+        <div><a [routerLink]="['/garages/', professional.id]" class="btn btn-menu text-center">Gérer mes garages</a>
         </div>
-        <div><a [routerLink]="['/add-garage/', professional?.id]" class="btn btn-menu text-center" (click)="logout()">Se
-                déconnecter</a></div>
+        <div><a [routerLink]="['/adverts/', professional.id]" class="btn btn-menu text-center">Gérer mes annonces</a>
+        </div>
+        <div><a class="btn btn-menu text-center" (click)="logout()">Me déconnecter</a>
+        </div>
     </div>
 
 

@@ -1,0 +1,60 @@
+@import './../../../styles.scss';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.menu-accueil{
+    margin: 0 2%;
+    list-style: none;
+    a, button{
+        background-color: $primary_color;
+        color: white;
+        font-size: 1.5rem;
+    }
+    button{
+        border: none;
+    }
+}
+header{
+    .user-hello{
+        text-align: right;
+        margin-right: 1rem;
+        color: $tertiary_color;
+        font-size: 1.5em;
+    }
+}
+.header-accueil, .header-accueil a, .header-accueil button{
+    background-color: $primary_color;
+    color: white;
+}
+.menu-accueil{
+    text-align: center;
+}
+.logo{
+    color: $tertiary_color;
+    font-size: 1.5rem;
+}
+
+a:hover, button:hover {
+    color: $tertiary_color !important ;
+    text-decoration: none;
+  }
+/* Fin header et début Search Bar*/
+
+.btnGroupDrop1{
+    border: 1px solid $tertiary_color;
+}
+.search-btn{
+    padding: 10px 15px;
+    background-color: $tertiary_color;
+    display: block;
+    margin: auto;
+    border-radius: 20px;
+    border: 0.5px solid black;
+}
+.col-md-2{
+    width: 60px;
+    text-align: center;
+}

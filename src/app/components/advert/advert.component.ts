@@ -7,7 +7,7 @@ import { AdvertService } from 'src/app/services/advert.service';
 @Component({
   selector: 'app-advert',
   templateUrl: './advert.component.html',
-  styleUrls: ['./advert.component.css']
+  styleUrls: ['./advert.component.scss']
 })
 export class AdvertComponent implements OnInit {
   advert: Advert;

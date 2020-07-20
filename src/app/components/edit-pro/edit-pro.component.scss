@@ -1,0 +1,10 @@
+@import './../pro-profil/pro-profil.component.scss';
+
+.row{
+    background-image: none;
+}
+
+a:hover, button:hover {
+    color: $tertiary_color !important ;
+    text-decoration: none;
+  }

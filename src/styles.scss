@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+$primary_color: rgb(0, 98, 173);
+$secondary_color: #000CAD;
+$tertiary_color: rgb(250, 218, 76);
+
+/* Pro-Profil colors */
+$profil_menu: #00ADA1;
+
+/* Formulaire Modification */ 
+.formulaire-modification{
+    width: 70%;
+    margin: 50px auto 50px auto;
+    border: solid 2px black;
+    box-shadow: 2px 2px 20px black;
+    padding: 20px;
+    .btn{
+        display: block;
+        margin: auto;
+        width: 40%;
+        background-color: $primary_color;
+    }
+}
+
+/* Formulaire Ajout */ 
+.formulaire-ajout{
+    width: 50%;
+    margin: 50px auto 50px auto;
+    border: solid 2px black;
+    box-shadow: 2px 2px 20px black;
+    padding: 20px;
+    label{
+        font-weight: bold;
+    }
+    .btn{
+        display: block;
+        margin: auto;
+        width: 40%;
+    }
+}
+
+
+html{
+    background-color: rgb(245, 245 , 245);
+}

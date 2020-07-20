@@ -14,7 +14,7 @@ import { ModelService } from 'src/app/services/model.service';
 @Component({
   selector: 'app-edit-advert',
   templateUrl: './edit-advert.component.html',
-  styleUrls: ['./edit-advert.component.css']
+  styleUrls: ['./edit-advert.component.scss']
 })
 export class EditAdvertComponent implements OnInit {
 

@@ -1,10 +1,10 @@
 <div class="container-fluid">
     <h1>Ajouter une annonce</h1>
 
-    <form #advertValidation="ngForm" (ngSubmit)="onSubmit()">
+    <form #advertValidation="ngForm" (ngSubmit)="onSubmit()" class="formulaire-ajout">
 
         <div class="form-group">
-            <label for="title">Title : </label>
+            <label for="title">Titre de l'annonce : </label>
             <input type="text" class="form-control" id="title" name="title" required [(ngModel)]="addAdvertForm.title"
                 #title="ngModel">
             <div [hidden]="title.valid" class="alert alert-danger">
@@ -22,7 +22,7 @@
         </div>
 
         <div class="form-group">
-            <label for="dateImmat">Année immatriculation : </label>
+            <label for="dateImmat">Année de mise en circulation : </label>
             <input type="number" class="form-control" id="dateImmat" name="dateImmat" required
                 [(ngModel)]="addAdvertForm.dateImmat" #dateImmat="ngModel">
             <div [hidden]="dateImmat.valid" class="alert alert-danger">
@@ -49,7 +49,7 @@
         </div>
 
         <div class="form-group">
-            <label for="fuel">Fuel : </label>
+            <label for="fuel">Type de carburant : </label>
             <select [(ngModel)]="addAdvertForm.fuel" name="fuel" class='form-control' #fuel='ngModel' id='type'
                 required>
                 <option *ngFor="let fuel of fuels" [ngValue]="fuel.type">
@@ -62,7 +62,7 @@
         </div>
 
         <div class="form-group">
-            <label for="brand">Brand : </label>
+            <label for="brand">Marque : </label>
             <select [(ngModel)]="addAdvertForm.brand" name="brand" class='form-control' #brand='ngModel' id='brand'
                 required>
                 <option *ngFor="let brand of brands" [ngValue]="brand.name">

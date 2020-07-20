@@ -6,9 +6,12 @@ import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-edit-pro',
   templateUrl: './edit-pro.component.html',
-  styleUrls: ['./edit-pro.component.css']
+  styleUrls: ['./edit-pro.component.scss']
 })
 export class EditProComponent implements OnInit {
+
+  professional: Professional;
+  professionals: Professional[];
 
   editProForm: Professional;
   id: number;
@@ -28,5 +31,14 @@ export class EditProComponent implements OnInit {
     this.professionalService.editPro(this.editProForm, this.id).subscribe(data => {
       this.router.navigate(['/home']);
     });
+  }
+  logout() {
+    localStorage.removeItem('user');
+    setTimeout(() => {
+      this.router.navigate(['/home']);
+    }, 1000);
+    setTimeout(() => {
+      location.reload();
+    }, 2000);
   }
 }

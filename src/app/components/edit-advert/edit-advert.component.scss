@@ -1,0 +1,24 @@
+@import './../pro-profil/pro-profil.component.scss';
+
+.row{
+    background-image: none;
+}
+
+a:hover, button:hover {
+    color: $tertiary_color !important ;
+    text-decoration: none;
+  }
+
+  .formulaire-modification{
+    width: 50%;
+    margin: 50px auto 50px auto;
+    border: solid 2px black;
+    box-shadow: 2px 2px 20px black;
+    padding: 20px;
+    .btn{
+        display: block;
+        margin: auto;
+        width: 40%;
+        background-color: $primary_color;
+    }
+}
