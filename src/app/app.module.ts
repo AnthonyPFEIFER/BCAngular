@@ -24,6 +24,7 @@ import { EditProComponent } from './components/edit-pro/edit-pro.component';
 import { EditGarageComponent } from './components/edit-garage/edit-garage.component';
 import { SearchPipe } from './pipes/search.pipe';
 import { EditAdvertComponent } from './components/edit-advert/edit-advert.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { EditAdvertComponent } from './components/edit-advert/edit-advert.compon
     EditProComponent,
     EditGarageComponent,
     SearchPipe,
-    EditAdvertComponent
+    EditAdvertComponent,
+    FooterComponent
   ],
   imports: [
     FormsModule,

@@ -1,0 +1,26 @@
+@import './../../../styles.scss';
+@import './../menu/menu.component.scss';
+.footer{
+    background-color: $primary_color;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    margin-top: 150px;
+    div{
+        height: 100%;
+        text-align: center;
+
+        a{
+            color: white;
+            width: 200px;
+            height: 100%;
+            float: right;
+            margin-right: 50px;
+            font-weight: bolder;
+            vertical-align: middle;
+            font-size: 1.5em;
+        }
+    }
+}

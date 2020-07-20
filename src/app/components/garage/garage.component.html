@@ -1,13 +1,25 @@
-<h1> Détails du garage </h1>
-
-<div>
-    Nom : {{ garage?.name}} <br>
-    Ville : {{ garage?.city }}
+<div class="titres">
+    <h1> {{ garage?.name}} </h1>
+    <h2> {{ garage?.city}} </h2>
 </div>
 
-<div *ngFor="let advert of adverts">
-    <a [routerLink]="['/advert', advert.id]"> {{ advert.title}} : {{ advert.description}} - {{ advert.model}}
-        ({{ advert.ref }})</a>
+<a class="btn btn-danger m-2" (click)="deleteGarage(garage)"> Supprimer ce garage </a>
+
+<div class=" liste-advert">
+
+    <div class="card-advert" style="width: 18rem;" *ngFor="let advert of adverts">
+        <div>
+            <img src="assets/img/Peugeot3008Card.png" class="card-img-top" alt="Peugeot3008">
+            <div class="card-body">
+                <h5 class="card-title">{{ advert.title}} </h5>
+                <p class="card-text"> {{ advert.description}} </p>
+                <p class="card-text"> {{ advert.model}} </p>
+                <p class="card-text"> {{ advert.brand}} </p>
+                <p class="card-text"> {{ advert.ref }} </p>
+                <a [routerLink]="['/advert', advert.id]" class="btn btn-primary btn-card"> {{ advert.price}} € <em
+                        class="fas fa-cart-plus"></em></a>
+            </div>
+        </div>
+    </div>
+
 </div>
-<a class="btn btn-danger m-2" (click)="deleteGarage(garage)"> /!\ Supprimer ce garage /!\
-</a>

@@ -17,6 +17,7 @@ export class AdminProfilComponent implements OnInit {
   advert: Advert;
   adverts: Advert[];
   id: number;
+  garage: Garage;
   garages: Garage[];
   proNumber: number;
   garageNumber: number;
@@ -47,5 +48,12 @@ export class AdminProfilComponent implements OnInit {
       });
     });
   }
-
+  deleteGarage(garage) {
+    this.garageService.deleteGarage(this.id).subscribe(data => {
+      this.garageService.getAllGarages().subscribe((result: Garage[]) => {
+        this.garages = result;
+        this.router.navigate(['/home']);
+      });
+    });
+  }
 }

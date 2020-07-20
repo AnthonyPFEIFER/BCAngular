@@ -1,20 +1,68 @@
-<h1>Profil Administrateur</h1>
-<h2>Le site comptabilise un total de {{ proNumber }} professionnels</h2>
+<h1 class="text-center">Profil Administrateur</h1>
 
-<div *ngFor="let professional of professionals">
-    <a [routerLink]="['/pro-profil', professional.id]"> {{ professional.firstname}} - {{ professional.lastname }}
-    </a>
-    <a class="btn btn-danger m-2" (click)="deleteProfessional(professional.id)"> /!\ Supprimer cet utilisateur /!\
-    </a>
-</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h2> Liste des Professionnels inscrits sur Centre'Auto'Cass </h2>
+                </div>
+                <div class="card-body">
+                    <div class="card-title text-left row liste" *ngFor="let professional of professionals">
+                        <div class="col-md-7">
+                            <a [routerLink]="['/pro-profil', professional.id]" class="btn btn-card">
+                                {{ professional.firstname}} - {{ professional.lastname }} </a>
+                        </div>
+                        <div class="col-md-5">
+                            <a class="btn btn-danger m-1 text-right"
+                                (click)="deleteProfessional(professional.id)">Supression
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer text-muted">
+                    <p>Le site comptabilise {{ proNumber }} professionnels</p>
 
-<a class="mr-5" [routerLink]="['/add-pro']">Ajouter un Professionnel </a>
+                    <a class="mr-5 btn btn-success" [routerLink]="['/add-pro']">Ajouter un Professionnel </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h2>Liste des Garages existants chez Centre'Auto'Cass </h2>
+                </div>
+                <div class="card-body">
+                    <div class="card-title text-left row liste" *ngFor="let garage of garages">
+                        <div class="col-md-12">
+                            <a [routerLink]="['/garage', garage.id]" class="btn btn-card text-left">
+                                {{ garage.name }} : <br>
+                                {{ garage.address }} <br>
+                                {{ garage.postCode}} - {{garage.city}}
+                                {{garage.professional}} ({{ garage.tel }})
+                            </a>
+                        </div>
 
-<h2>Le site comptabilise un total de {{ garageNumber }} garages</h2>
-
-<div *ngFor="let garage of garages">
-    <a [routerLink]="['/garage', garage.id]"> {{ garage.name }} : {{ garage.address }} - {{garage.city}}
-        ({{ garage.tel }})</a>
-</div>
-
-<h2>Le site comptabilise un total de {{ advertNumber }} annonces</h2>
+                    </div>
+                </div>
+                <div class="card-footer text-muted">
+                    <p>Le site comptabilise {{ garageNumber }} garages</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 statistiques">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top"
+                    src="https://www.edulcorants.eu/wp-content/uploads/2017/08/statistique-edulcorants-analyse.png"
+                    alt="Statistiques">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Statistiques</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Le site comptabilise {{ proNumber }} professionnels</li>
+                    <li class="list-group-item">Le site comptabilise {{ garageNumber }} garages</li>
+                    <li class="list-group-item">Le site comptabilise {{ advertNumber }} annonces</li>
+                </ul>
+            </div>
+        </div>
+    </div>

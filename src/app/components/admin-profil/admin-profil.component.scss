@@ -1,0 +1,19 @@
+@import './../../../styles.scss';
+
+.card{
+    box-shadow: 1px 1px 10px black;
+}
+.btn-danger{
+    float: right;
+}
+.liste{
+    box-shadow: 1px 1px 5px black;
+    margin: 10px 5px 10px 5px;
+}
+.btn-card{
+    color: $secondary_color;
+    background-color: white;
+    font-weight: bold;
+    font-size: 1em;
+
+}

@@ -1,0 +1,43 @@
+@import './../../../styles.scss';
+
+h1, h2{
+    text-align: center;
+}
+.titres{
+    box-shadow: 1px 1px 5px black;
+    width: 50%;
+    margin: auto;
+}
+.btn-danger{
+    display: block;
+    float: right;
+    font-weight: bold;
+}
+/* Debut Card */
+.card-advert{
+    display: inline-block;
+    margin: 30px 5% 20px 40px;
+    .card-img-top{
+        border-radius: 25px;
+    }
+    .card-title{
+        text-align: center;
+        font-weight: bold;
+    }
+    .card-text{
+        text-align: center;
+    }
+    .btn-card{
+        background-color: $secondary_color;
+        width: 80%;
+        display: block;
+        margin: auto;
+    }
+}
+/* Fin Card */ 
+
+.liste-advert{
+    padding: auto;
+    display: block;
+    margin-bottom: 50px;
+}
