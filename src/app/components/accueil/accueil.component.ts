@@ -8,6 +8,7 @@ import { FuelService } from 'src/app/services/fuel.service';
 import { BrandService } from 'src/app/services/brand.service';
 import { ModelService } from 'src/app/services/model.service';
 
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-accueil',
@@ -44,7 +45,6 @@ export class AccueilComponent implements OnInit {
     this.modelService.getAllModels().subscribe((data: Model[]) => {
       this.models = data;
     });
-
   }
   OnResearch(): void {
 
