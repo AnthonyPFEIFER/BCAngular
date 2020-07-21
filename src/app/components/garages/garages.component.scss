@@ -1,0 +1,39 @@
+@import './../../../styles.scss';
+@import '../adverts/adverts.component.scss';
+
+
+.liste-garages{
+    padding: auto;
+    display: block;
+    margin-bottom: 50px;
+}
+
+.card-garage{
+    display: inline-block;
+    margin: 30px 5% 20px 40px;
+    background-color: $secondary_color;
+    height: 400px;
+    width: 500px;
+    .card-text{
+        text-align: center;
+        height: 50px;
+    }
+    .btn-card{
+        background-color: $secondary_color;
+        width: 80%;
+        display: block;
+        margin: auto;
+    }
+    a{
+        font-size: 1.5rem;
+        color: white;
+        text-align: center;
+        margin: auto;
+    }
+    a:hover {
+        color: $tertiary_color !important ;
+      }
+    .card-header{
+        text-align: center;
+    }
+}

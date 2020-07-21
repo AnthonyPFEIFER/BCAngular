@@ -1,5 +1,17 @@
-<div *ngFor="let garage of garages">
-    <a [routerLink]="['/garage', garage.id]"> {{ garage.name }} : {{ garage.address }} - {{garage.city}}
-        ({{ garage.tel }})</a>
+<div>
+    <a [routerLink]="['/add-garage/', professional?.id]" class="btn btn-add"> Ajouter un garage </a>
 </div>
-<a [routerLink]="['/add-garage/', professional?.id]" class="btn btn-success btn-card"> Ajouter un garage </a>
+
+<div class="liste-garages">
+
+    <div class="card card-garage text-white mb-3" style="max-width: 18rem;" *ngFor="let garage of garages">
+        <img src="assets/img/garage.png" class="card-img-top" alt="Peugeot3008">
+        <div class="card-header">
+            <a [routerLink]="['/garage', garage.id]">{{ garage.name }} </a>
+        </div>
+        <div class="card-body">
+            <p class="card-text"> {{ garage.address }} - {{garage.city}} </p>
+        </div>
+    </div>
+
+</div>
