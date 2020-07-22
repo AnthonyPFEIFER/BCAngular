@@ -23,7 +23,7 @@ import { Picture } from 'src/app/models/picture';
 export class AddAdvertsComponent implements OnInit {
 
   addAdvertForm: Advert;
-  addPictureForm: Picture;
+  /*   addPictureForm: Picture; */
   professional: Professional;
   fuels: Fuel[];
   brands: Brand[];
@@ -54,26 +54,80 @@ export class AddAdvertsComponent implements OnInit {
     });
 
     this.addAdvertForm = new Advert();
-    this.addPictureForm = new Picture();
+    /*this.addPictureForm = new Picture(); */
   }
 
   onSubmit() {
     this.advertService.addAdvert(this.addAdvertForm, this.id).subscribe(data => {
+      this.addAdvertForm.picture = this.sellersPermitString;
+      this.pictureService.addPicture(this.addAdvertForm.picture, data.id)
+        .subscribe(event => {
+          this.addAdvertForm.picture = event.file;
+        });
       this.router.navigate(['/pro-profil' + '/' + this.id]);
     });
-
   }
 
-  onFileChanged(event) {
-    this.selectedFile = event.target.files[0] as File;
-    this.onUpload();
+  imageSrc;
+  sellersPermitFile: any;
+
+  //base64s
+  sellersPermitString: string;
+
+  //json
+  finalJson = {};
+
+  currentId: number = 0;
+
+  addPictures() {
+    this.finalJson = {
+      "sellersPermitFile": this.sellersPermitString,
+    }
   }
 
-  onUpload() {
-    const uploadData = new FormData();
-    this.pictureService.addPicture(this.selectedFile)
-      .subscribe(event => {
-        this.addAdvertForm.picture = event.file;
-      });
+  public picked(event, field) {
+    this.currentId = field;
+    let fileList: FileList = event.target.files;
+    if (fileList.length > 0) {
+      const file: File = fileList[0];
+      if (field == 1) {
+        this.sellersPermitFile = file;
+        this.handleInputChange(file); //turn into base64
+      }
+    }
+    else {
+      alert("No file selected");
+    }
+  }
+
+
+  handleInputChange(files) {
+    var file = files;
+    var pattern = /image-*/;
+    var reader = new FileReader();
+    if (!file.type.match(pattern)) {
+      alert('invalid format');
+      return;
+    }
+    reader.onloadend = this._handleReaderLoaded.bind(this);
+    reader.readAsDataURL(file);
+  }
+  _handleReaderLoaded(e) {
+    let reader = e.target;
+    var base64result = reader.result.substr(reader.result.indexOf(',') + 1);
+    //this.imageSrc = base64result;
+    let id = this.currentId;
+    switch (id) {
+      case 1:
+        this.sellersPermitString = base64result;
+        break;
+    }
+
+    this.log();
+  }
+
+  log() {
+    // for debug
+    console.log('1', this.sellersPermitString);
   }
 }

@@ -19,16 +19,20 @@ export class PictureService {
   }
 
 
-  addPicture(picture: File): Observable<any> {
-    const uploadData = new FormData();
-    uploadData.append('picture', picture, picture.name);
-    console.log(uploadData);
-    return this.httpClient.post<Picture>(this.addPictureUrl, uploadData).pipe(
+  addPicture(picture, id: Number): Observable<any> {
+    const uploadData = { picture };
+    return this.httpClient.post<Picture>(this.addPictureUrl + '/' + id, uploadData).pipe(
       retry(1),
       catchError(this.handleError)
     );
   }
-
+  getPictureByAdvertId(id: Number): Observable<Picture[]> {
+    return this.httpClient.get<Picture[]>(this.pictureByAdvertUrl + '/' + id)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      );
+  }
   handleError(error) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {

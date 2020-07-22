@@ -102,14 +102,21 @@
 
         <div class="form-group">
             <label for="picture">Photo : </label>
+            <input type="file" class="form-control" id="picture" name="picture" required
+                [(ngModel)]="addAdvertForm.picture" #picture="ngModel" (change)="picked($event,1)">
+        </div>
+        <!--         <div class="form-group">
+            <label for="picture">Photo : </label>
             <input type="file" class="form-control" id="picture" name="picture" required accept=".png,.jpeg,.jpg"
                 [(ngModel)]="addPictureForm.data" #picture="ngModel" (change)="onFileChanged($event)">
         </div>
-
+ -->
         <div>
             <input id="submitForm" type="submit" value="Envoyer" class=" form-control btn btn-success col"
                 [disabled]='!advertValidation.valid'>
         </div>
     </form>
+
+
 
 </div>
