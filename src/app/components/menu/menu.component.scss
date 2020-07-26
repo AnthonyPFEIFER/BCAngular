@@ -8,14 +8,30 @@
 .menu-accueil{
     margin: 0 2%;
     list-style: none;
+    text-align: center;
     a, button{
         background-color: $primary_color;
         color: white;
         font-size: 1.5rem;
     }
-    button{
-        border: none;
+
+    .selected{
+        border: 1px solid gainsboro;
+        border-bottom: none;
+        background-color: $active_color;
+        a{
+            background-color: $active_color;
+        }
+        }
+    
+    .onglet:hover{
+        background-color: $active_color;
+        a{
+            background-color: $active_color;
+            color: $tertiary_color;
+        }
     }
+
 }
 header{
     box-shadow: 2px 2px 10px black;
@@ -31,16 +47,13 @@ header{
     background-color: $primary_color;
     color: white;
 }
-.menu-accueil{
-    text-align: center;
-}
 .logo{
     color: $tertiary_color;
     font-size: 1.5rem;
 }
 
 a:hover, button:hover {
-    color: $tertiary_color !important ;
+    color: $tertiary_color;
     text-decoration: none;
   }
 /* Fin header et début Search Bar*/

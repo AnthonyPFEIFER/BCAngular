@@ -1,109 +1,114 @@
-<div class="recherche container-fluid">
-    <form>
-        <div class="row">
-            <div class="col-md-9 barre-filtres">
-                <div class="row">
-                    <div class="col-md-2 col-6">
-                        <div class="btn-group research-bar" role="group">
-                            <div class="btn btn-light btnGroupDrop1">
-                                <select name="brand" id='brand'>
-                                    <option value=""> -- Marque -- </option>
-                                    <option *ngFor="let brand of brands" [ngValue]="brand.name">
-                                        {{brand.name}}
-                                    </option>
-                                </select>
+<div class="fond">
+    <div class="recherche container-fluid">
+        <form>
+            <div class="row">
+                <div class="col-md-9 barre-filtres">
+                    <div class="row">
+                        <div class="col-md-2 col-6 ">
+                            <div class="btn-group research-bar " role="group">
+                                <div class="btn btn-light btnGroupDrop1 ">
+                                    <select name="brand" id='brand' class="form-control">
+                                        <option value=""> -- Marque -- </option>
+                                        <option *ngFor="let brand of brands" [ngValue]="brand.name">
+                                            {{brand.name}}
+                                        </option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-2 col-6">
-                        <div class="btn-group research-bar" role="group">
-                            <div class="btn btn-light btnGroupDrop1">
-                                <select name="model" id='model'>
-                                    <option value=""> -- Modèle -- </option>
-                                    <option *ngFor="let model of models" [ngValue]="model.name">
-                                        {{model.name}}
-                                    </option>
-                                </select>
+                        <div class="col-md-2 col-6">
+                            <div class="btn-group research-bar" role="group">
+                                <div class="btn btn-light btnGroupDrop1">
+                                    <select name="model" id='model' class="form-control">
+                                        <option value=""> -- Modèle -- </option>
+                                        <option *ngFor="let model of models" [ngValue]="model.name">
+                                            {{model.name}}
+                                        </option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-2 col-6">
-                        <div class="btn-group research-bar" role="group">
-                            <div class="btn btn-light btnGroupDrop1">
-                                <select name="fuel" id='fuel'>
-                                    <option value=""> -- Carburant -- </option>
-                                    <option *ngFor="let fuel of fuels" [ngValue]="fuel.type">
-                                        {{fuel.type}}
-                                    </option>
-                                </select>
+                        <div class="col-md-2 col-6">
+                            <div class="btn-group research-bar" role="group">
+                                <div class="btn btn-light btnGroupDrop1">
+                                    <select name="fuel" id='fuel' class="form-control">
+                                        <option value=""> -- Carburant -- </option>
+                                        <option *ngFor="let fuel of fuels" [ngValue]="fuel.type">
+                                            {{fuel.type}}
+                                        </option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-2 col-6">
-                        <div class="btn-group research-bar" role="group">
-                            <div class="btn btn-light btnGroupDrop1">
-                                <select name="model" id='model'>
-                                    <option value=""> -- Mise en circulation -- </option>
-                                    <option *ngFor="let advert of adverts" [ngValue]="advert.dateImmat">
-                                        {{advert.dateImmat}}
-                                    </option>
-                                </select>
+                        <div class="col-md-2 col-6">
+                            <div class="btn-group research-bar" role="group">
+                                <div class="btn btn-light btnGroupDrop1">
+                                    <select name="model" id='model' class="form-control">
+                                        <option value=""> -- Mise en circulation -- </option>
+                                        <option *ngFor="let advert of adverts" [ngValue]="advert.dateImmat">
+                                            {{advert.dateImmat}}
+                                        </option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-2 col-6">
-                        <div class="btn-group research-bar" role="group">
-                            <div class="btn btn-light btnGroupDrop1">
-                                <select name="model" id='model'>
-                                    <option value=""> -- Kilométrage -- </option>
-                                    <option *ngFor="let advert of adverts" [ngValue]="advert.km">
-                                        {{advert.km}}
-                                    </option>
-                                </select>
+                        <div class="col-md-2 col-6">
+                            <div class="btn-group research-bar" role="group">
+                                <div class="btn btn-light btnGroupDrop1">
+                                    <select name="model" id='model' class="form-control">
+                                        <option value=""> -- Kilométrage -- </option>
+                                        <option *ngFor="let advert of adverts" [ngValue]="advert.km">
+                                            {{advert.km}}
+                                        </option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-2 col-6">
-                        <div class="btn-group research-bar" role="group">
-                            <div class="btn btn-light btnGroupDrop1">
-                                <select name="model" id='model'>
-                                    <option value=""> -- Prix -- </option>
-                                    <option *ngFor="let advert of adverts" [ngValue]="advert.price">
-                                        {{advert.price}}
-                                    </option>
-                                </select>
+                        <div class="col-md-2 col-6">
+                            <div class="btn-group research-bar" role="group">
+                                <div class="btn btn-light btnGroupDrop1">
+                                    <select name="model" id='model' class="form-control">
+                                        <option value=""> -- Prix -- </option>
+                                        <option *ngFor="let advert of adverts" [ngValue]="advert.price">
+                                            {{advert.price}}
+                                        </option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="row">
-                    <div class="col-md-12">
-                        <button type="button" class="btn btn-default search-btn" (click)="OnResearch()">
-                            Rechercher
-                        </button>
+                <div class="col-md-3">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button type="button" class="btn btn-default search-btn" (click)="OnResearch()">
+                                Rechercher
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </form>
-</div>
-
-
-
-<div class=" liste-advert">
-
-    <div class="card-advert" style="width: 18rem;" *ngFor="let advert of adverts">
-        <div>
-            <img src="assets/img/Peugeot3008Card.png" class="card-img-top" alt="Peugeot3008">
-            <div class="card-body">
-                <h5 class="card-title">{{ advert.title}} </h5>
-                <p class="card-text"> {{ advert.description}} </p>
-                <a [routerLink]="['/advert', advert.id]" class="btn btn-primary btn-card"> {{ advert.price}} € <em
-                        class="fas fa-cart-plus"></em></a>
-            </div>
-        </div>
+        </form>
     </div>
 
+
+
+    <div class="row liste-advert gallery">
+
+        <div class="card-advert card m-5 col-md-4" style="width: 25rem;" *ngFor="let advert of adverts">
+            <div>
+                <div class="card-header p-2">
+                    <h5 class="card-title">{{ advert.title}} </h5>
+                </div>
+                <!--             <img src="{{'data:image/png;base64,' +this.picture.data}}" class="card-img-top" alt="Peugeot3008"> -->
+                <div class="card-body">
+
+                    <p class="card-text mt-4"> {{ advert.description}} </p>
+                    <p class="card-text mt-4 price"> {{ advert.price}} € </p>
+                    <a [routerLink]="['/advert', advert.id]" class="btn btn-primary btn-card"> En savoir plus </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>

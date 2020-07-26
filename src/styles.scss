@@ -2,9 +2,13 @@
 $primary_color: rgb(0, 98, 173);
 $secondary_color: #000CAD;
 $tertiary_color: rgb(250, 218, 76);
-
+$active_color: #3f769f;
 /* Pro-Profil colors */
 $profil_menu: #00ADA1;
+
+:root{
+    font-size: 13px;
+}
 
 /* Formulaire Modification */ 
 .formulaire-modification{
@@ -19,14 +23,17 @@ $profil_menu: #00ADA1;
         width: 40%;
         background-color: $primary_color;
     }
+    .btn:hover{
+        background-color: rgb(0, 98, 173, 0.6)
+    }
 }
 
 /* Formulaire Ajout */ 
 .formulaire-ajout{
     width: 50%;
     margin: 50px auto 50px auto;
-    border: solid 2px black;
-    box-shadow: 2px 2px 20px black;
+    border: solid 1px gainsboro;
+    box-shadow: 2px 2px 20px gainsboro;
     padding: 20px;
     label{
         font-weight: bold;

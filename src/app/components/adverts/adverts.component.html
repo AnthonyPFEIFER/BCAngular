@@ -1,11 +1,31 @@
 <div>
     <a [routerLink]="['/add-advert/', professional?.id]" class="btn btn-add"> Ajouter une annonce </a>
 </div>
-<div class=" liste-advert">
+
+<div class="row liste-advert gallery">
+
+    <div class="card-advert card m-5 col-md-4" style="width: 25rem;" *ngFor="let advert of adverts">
+        <div>
+            <div class="card-header p-2">
+                <h5 class="card-title">{{ advert.title}} </h5>
+            </div>
+            <!--             <img src="{{'data:image/png;base64,' +this.picture.data}}" class="card-img-top" alt="Peugeot3008"> -->
+            <div class="card-body">
+
+                <p class="card-text mt-4"> {{ advert.description}} </p>
+                <p class="card-text mt-4 price"> {{ advert.price}} € </p>
+                <a [routerLink]="['/advert', advert.id]" class="btn btn-primary btn-card"> En savoir plus </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- <div class=" liste-advert">
 
     <div class="card-advert" style="width: 18rem;" *ngFor="let advert of adverts">
         <div>
-            <img src="assets/img/Peugeot3008Card.png" class="card-img-top" alt="Peugeot3008">
+
             <div class="card-body">
                 <h5 [routerLink]="['/advert', advert.id]" class="card-title">{{ advert.title}} </h5>
                 <p class="card-text"> {{ advert.description}} </p>
@@ -15,4 +35,4 @@
         </div>
     </div>
 
-</div>
+</div> -->

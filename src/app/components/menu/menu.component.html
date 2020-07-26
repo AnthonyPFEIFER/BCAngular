@@ -1,24 +1,30 @@
 <header class="container-fluid header-accueil">
     <div class="row">
-        <div class="col-md-12 logo">Centre'Auto'Ccas</div>
+        <div class="col logo ml-5 mt-1">Centre'Auto'Ccas</div>
+        <div class="col-auto user-hello mt-1" *ngIf="currentUser?.username">Bonjour {{ currentUser.username }}</div>
     </div>
 
-    <div class="user-hello" *ngIf="currentUser?.username">Bonjour {{ currentUser.username }}</div>
+    <div class="row mt-1 mb-1">
+        <div class="col">
+            <hr style="border-bottom-color: gainsboro;" />
+        </div>
+    </div>
 
     <div class="row menu-accueil header-accueil">
 
-        <div class="col-md-3">
+        <div class="col-md-3 onglet">
             <a class="mr-5" routerLink="home">Accueil </a>
         </div>
-        <div class="col-md-3">
-            <a *ngIf="currentUser?.username" [routerLink]="['/pro-profil', currentUser?.id]">Mon profil</a>
+        <div class="col-md-3 onglet">
+            <a *ngIf="currentUser?.username" [routerLink]="['/pro-profil', currentUser?.id]"
+                >Mon profil</a>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 onglet">
             <a class="mr-5" routerLink="admin-profil">Profil Admin </a>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 onglet">
             <a *ngIf="!currentUser" class="mr-5" routerLink="login">M'authentifier </a>
-            <button *ngIf="currentUser?.username" type="submit" (click)="logout()">Me déconnecter</button>
+            <a *ngIf="currentUser?.username" type="submit" (click)="logout()" style="cursor: pointer">Me déconnecter</a>
         </div>
 
     </div>

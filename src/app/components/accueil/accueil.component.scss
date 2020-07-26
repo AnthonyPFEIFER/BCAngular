@@ -3,6 +3,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+}
+.fond{
+    background-image: url("src/assets/img/carWallpaper.jpg");
 }
 a{
     font-size: 1.5rem;
@@ -36,21 +40,35 @@ header{
 .card-advert{
     display: inline-block;
     margin: 30px 5% 20px 40px;
+    height: 300px;
+    box-shadow: 2px 2px 20px gainsboro;
+    .card-body{
+        .card-text{
+            text-align: center;
+        }
+        .price{
+            color: $tertiary_color;
+            font-weight: bold;
+            font-size: 2rem;
+            text-shadow: 0.5px 0.5px grey;
+        }
+        .btn-card{
+            background-color: $secondary_color;
+            width: 60%;
+            display: block;
+            margin: 0 auto 20px auto;
+            position: absolute;
+            bottom: 0;
+            left: 20%;
+            right: 20%;
+        }
+    }
     .card-img-top{
         border-radius: 25px;
     }
     .card-title{
         text-align: center;
         font-weight: bold;
-    }
-    .card-text{
-        text-align: center;
-    }
-    .btn-card{
-        background-color: $secondary_color;
-        width: 80%;
-        display: block;
-        margin: auto;
     }
 }
 /* Fin Card */ 

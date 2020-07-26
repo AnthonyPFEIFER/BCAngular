@@ -26,8 +26,8 @@ export class PictureService {
       catchError(this.handleError)
     );
   }
-  getPictureByAdvertId(id: Number): Observable<Picture[]> {
-    return this.httpClient.get<Picture[]>(this.pictureByAdvertUrl + '/' + id)
+  getPictureByAdvertId(id: Number): Observable<Picture> {
+    return this.httpClient.get<Picture>(this.pictureByAdvertUrl + '/' + id)
       .pipe(
         retry(1),
         catchError(this.handleError)

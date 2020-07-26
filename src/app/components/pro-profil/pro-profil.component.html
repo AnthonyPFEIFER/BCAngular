@@ -1,12 +1,16 @@
 <div class="row">
     <div class="col-md-3">
-        <div><a class="btn btn-menu text-center" [routerLink]="['/edit-pro/', professional.id]">Gérer mon compte</a>
+        <div>
+            <button class="ml-3 btn btn-menu" [routerLink]="['/edit-pro/', professional.id]">Gérer mon compte</button>
         </div>
-        <div><a [routerLink]="['/garages/', professional.id]" class="btn btn-menu text-center">Gérer mes garages</a>
+        <div>
+            <button [routerLink]="['/garages/', professional.id]" class="ml-3 btn btn-menu">Gérer mes garages</button>
         </div>
-        <div><a [routerLink]="['/adverts/', professional.id]" class="btn btn-menu text-center">Gérer mes annonces</a>
+        <div>
+            <button [routerLink]="['/adverts/', professional.id]" class="ml-3 btn btn-menu">Gérer mes annonces</button>
         </div>
-        <div><a class="btn btn-menu text-center" (click)="logout()">Me déconnecter</a>
+        <div>
+            <button class="ml-3 btn btn-menu" (click)="logout()">Me déconnecter</button>
         </div>
     </div>
 

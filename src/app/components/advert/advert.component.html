@@ -1,97 +1,105 @@
-<h1 class="text-center"> {{ advert?.title }} </h1>
+<div class="fond">
+    <h1 class="text-center"> {{ advert?.title }} </h1>
+
+    <div class="container">
+        <div class="zoom">
+            <div class="image">
+                <img src="{{'data:image/jpg;base64,' +this.picture[0].data}}" class="card-img-top text-center"
+                    alt="Voiture">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h3>
+                    Mise en circulation: {{ advert?.dateImmat }}
+                </h3>
+                <h3>
+                    Marque: {{ advert?.model.brand.name }}
+                </h3>
+                <h3>
+                    Modele: {{ advert?.model.name }}
+                </h3>
+            </div>
+            <div class="col-md-4">
+                <h3>
+                    Kilométrage: {{ advert?.km }}
+                </h3>
+                <h3>
+                    Carburant: {{ advert?.fuel.type }}
+                </h3>
+                <h3>
+                    Reference de l'annonce: {{ advert?.ref }}
+                </h3>
+            </div>
+            <div class="col-md-4 price-advert"> {{ advert?.price }} €</div>
+        </div>
+    </div>
+    <p class="description">
+        {{ advert?.description }}
+    </p>
+    <div class="text-center">
+        <a href="mailto:anthhony.pfeifer@gmail.com" class="btn btn-info"> Contactez nous pour plus d'informations ! </a>
+    </div>
+    <div *ngIf="currentUser" class="m-2 text-right">
+        <button [routerLink]="['/edit-advert/', advert.id]" class="btn btn-edit" style="cursor: pointer"> Modifier votre
+            annonce </button>
+    </div>
+    <div class="m-2 text-right">
+        <button class="btn btn-danger " (click)="deleteAdvert(advert)"> Supprimer cette annonce </button>
+    </div>
 
 
 
 
-
-
-
-
-<h2> {{ advert.picture }} </h2>
-
+    <!-- 
 <div class="carousel">
     <ul class="carousel-items">
         <li class="carousel-item-solo">
-            <div class="card">
+            <div class="text-center">
                 <img alt="Une image de voiture" src="/assets/img/slide3.jpg" />
             </div>
         </li>
         <li class="carousel-item-solo">
-            <div class="card">
+            <div class="text-center">
                 <img alt="Une image de voiture" src="/assets/img/slide2.jpg" />
             </div>
         </li>
         <li class="carousel-item-solo">
-            <div class="card">
+            <div class="text-center">
                 <img alt="Une image de voiture" src="/assets/img/slide1.jpg" />
             </div>
         </li>
         <li class="carousel-item-solo">
-            <div class="card">
+            <div class="text-center">
                 <img alt="Une image de voiture" src="/assets/img/slide1.jpg" />
             </div>
         </li>
         <li class="carousel-item-solo">
-            <div class="card">
+            <div class="text-center">
                 <img alt="Une image de voiture" src="/assets/img/slide1.jpg" />
             </div>
         </li>
         <li class="carousel-item-solo">
-            <div class="card">
+            <div class="text-center">
                 <img alt="Une image de voiture" src="/assets/img/slide1.jpg" />
             </div>
         </li>
         <li class="carousel-item-solo">
-            <div class="card">
+            <div class="text-center">
                 <img alt="Une image de voiture" src="/assets/img/slide1.jpg" />
             </div>
         </li>
         <li class="carousel-item-solo">
-            <div class="card">
+            <div class="text-center">
                 <img alt="Une image de voiture" src="/assets/img/slide2.jpg" />
             </div>
         </li>
         <li class="carousel-item-solo">
-            <div class="card">
+            <div class="text-center">
                 <img alt="Une image de voiture" src="/assets/img/slide1.jpg" />
             </div>
         </li>
     </ul>
-</div>
+</div> -->
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-4">
-            <h3>
-                Mise en circulation: {{ advert?.dateImmat }}
-            </h3>
-            <h3>
-                Marque: {{ advert?.model.brand.name }}
-            </h3>
-            <h3>
-                Modele: {{ advert?.model.name }}
-            </h3>
-        </div>
-        <div class="col-md-4">
-            <h3>
-                Kilométrage: {{ advert?.km }}
-            </h3>
-            <h3>
-                Carburant: {{ advert?.fuel.type }}
-            </h3>
-            <h3>
-                Reference de l'annonce: {{ advert?.ref }}
-            </h3>
-        </div>
-        <div class="col-md-4 price-advert"> {{ advert?.price }} €</div>
-    </div>
-</div>
-<p>
-    {{ advert?.description }}
-</p>
-<div class="text-center">
-    <a href="" class="btn btn-info"> Contactez nous pour plus d'informations ! </a>
-</div>
-<div>
-    <button class="btn btn-danger m-2" (click)="deleteAdvert(advert)"> Supprimer cette annonce </button>
 </div>

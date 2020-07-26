@@ -6,6 +6,7 @@ import { AdvertService } from 'src/app/services/advert.service';
 import { PictureService } from 'src/app/services/picture.service';
 import { Picture } from 'src/app/models/picture';
 
+
 @Component({
   selector: 'app-advert',
   templateUrl: './advert.component.html',
@@ -17,6 +18,7 @@ export class AdvertComponent implements OnInit {
   picture = new Picture();
   pictures: Picture[];
   id: number;
+  currentUser = null;
   // tslint:disable-next-line: max-line-length
   constructor(private route: ActivatedRoute, private garageService: GarageService, private advertService: AdvertService, private pictureService: PictureService, private router: Router) { }
 
@@ -25,13 +27,17 @@ export class AdvertComponent implements OnInit {
     this.advertService.getAdvertsById(this.id).subscribe((data: Advert) => {
       this.advert = data;
     });
-    this.pictureService.getPictureByAdvertId(this.id).subscribe((data: Picture[]) => {
-      this.pictures = data;
+    this.pictureService.getPictureByAdvertId(this.id).subscribe((data: Picture) => {
+      this.picture = data;
+      setTimeout(() => {
+        console.log(this.picture[0].data);
+      }, 3000);
     });
     console.log(this.advert);
     setTimeout(() => {
-      console.log(this.advert);
+      console.log(this.picture);
     }, 2000);
+    this.currentUser = JSON.parse(localStorage.getItem('user'));
   }
   deleteAdvert(advert) {
     this.advertService.deleteAdvert(this.id).subscribe(data => {
@@ -41,5 +47,6 @@ export class AdvertComponent implements OnInit {
       });
     });
   }
+
 
 }

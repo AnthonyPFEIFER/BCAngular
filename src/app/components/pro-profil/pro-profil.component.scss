@@ -1,19 +1,23 @@
 @import './../../../styles.scss';
 .btn-menu{
-    background-color: $profil_menu;
+    
+    background-color: $secondary_color;
+    
     width: 80%;
-    height: 100px;
-    margin-bottom: 20px;
-    color: white !important;
+    height: 40px;
+    margin-top: 20px;
+    color: white;
+    //text-align: center;
+    /*
     text-shadow: 0px 2px 2px black;
-    text-decoration: underline !important;
-    text-align: center;
     font-size: 30px;
-    box-shadow: 1px 1px 5px black;
+    */
+    box-shadow: 1px 1px 5px gray;
+    
 }
 .row{
     padding-top: 0px;
-    background-image: url("src/assets/img/road66.jpg");
+    background-image: url("src/assets/img/carWallpaper.jpg");
     background-size: 100%;
     min-height: 1000px;
 }

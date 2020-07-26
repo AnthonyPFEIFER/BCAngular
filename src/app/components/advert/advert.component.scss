@@ -1,3 +1,4 @@
+@import './../../../styles.scss';
 .carousel-items {
     display: flex;
     overflow-x: scroll;
@@ -31,11 +32,26 @@
 img{
     max-width: 300px;
     max-height: 200px;
+    display: block;
+    text-align: center;
+}
+.card-img-top{
+    display: block;
+    margin: 50px auto;
+    border-radius: 25%;
+    box-shadow: 2px 2px 20px gainsboro;
 }
 .price-advert{
-    color: orangered;
-    font-size: 2rem;
+    color: $tertiary_color;
+    font-size: 4rem;
     text-align: center;
+    text-shadow: 2px 2px grey;
+}
+h3{
+    color: $primary_color
+}
+.description{
+    font-size: 2rem;
 }
 /* a{
     background-color: rgb(99, 188, 190);
@@ -43,3 +59,34 @@ img{
     color: white;
     border-radius: 5%;
 } */
+.btn-edit{
+    background-color: $secondary_color;
+    color: white;
+}
+
+/* Faire un Zoom sur l'image */
+.zoom {
+    width: 320px;
+    height: 240px;
+    margin: auto;
+    }
+    .image {
+    width: 100%;
+    height: 100%;
+    }
+    .image img {
+    /* La transition s'applique à la fois sur la largeur et la hauteur, avec une durée d'une seconde. */
+    -webkit-transition: all 1s ease; /* Safari et Chrome */
+    -moz-transition: all 1s ease; /* Firefox */
+    -ms-transition: all 1s ease; /* Internet Explorer 9 */
+    -o-transition: all 1s ease; /* Opera */
+    transition: all 1s ease;
+    }
+    .image:hover img {
+    /* L'image est grossie de 25% */
+    -webkit-transform:scale(1.25); /* Safari et Chrome */
+    -moz-transform:scale(1.25); /* Firefox */
+    -ms-transform:scale(1.25); /* Internet Explorer 9 */
+    -o-transform:scale(1.25); /* Opera */
+    transform:scale(1.25);
+    }
