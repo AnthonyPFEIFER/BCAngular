@@ -27,7 +27,24 @@ $profil_menu: #00ADA1;
         background-color: rgb(0, 98, 173, 0.6)
     }
 }
-
+@media all and (max-width: 1024px){
+    .formulaire-modification{  
+        width: 90%;
+        margin: 10px auto 10px auto;
+        border: solid 1px gainsboro;
+        box-shadow: 2px 2px 20px gainsboro;
+        padding: 20px;
+        .btn{
+            display: block;
+            margin: auto;
+            width: 40%;
+            background-color: $primary_color;
+        }
+        .btn:hover{
+            background-color: rgb(0, 98, 173, 0.6)
+        }
+    }
+}
 /* Formulaire Ajout */ 
 .formulaire-ajout{
     width: 50%;
@@ -44,7 +61,24 @@ $profil_menu: #00ADA1;
         width: 40%;
     }
 }
-
+@media all and (max-width: 1024px){
+    .formulaire-ajout{  
+        width: 90%;
+        margin: 10px auto 10px auto;
+        border: solid 1px gainsboro;
+        box-shadow: 2px 2px 20px gainsboro;
+        padding: 20px;
+        .btn{
+            display: block;
+            margin: auto;
+            width: 40%;
+            background-color: $primary_color;
+        }
+        .btn:hover{
+            background-color: rgb(0, 98, 173, 0.6)
+        }
+    }
+}
 html{
     background-color: rgb(245, 245 , 245);
 }

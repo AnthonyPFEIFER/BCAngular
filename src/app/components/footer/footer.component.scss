@@ -1,5 +1,6 @@
 @import './../../../styles.scss';
 @import './../menu/menu.component.scss';
+
 .footer{
     background-color: $primary_color;
     box-shadow: 2px 2px 10px black;
@@ -24,6 +25,35 @@
         }
         a:hover{
             background-color: $secondary_color;
+        }
+    }
+}
+@media all and (max-width: 1024px){
+    .footer{
+        background-color: $primary_color;
+        box-shadow: 2px 2px 10px black;
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        height: 75px;
+        width: 100%;
+        margin-top: 90%;
+        div{
+            height: 100%;
+            text-align: center;
+            a{
+                color: white;
+                width: 200px;
+                height: 100%;
+                float: right;
+                margin-right: 50px;
+                font-weight: bolder;
+                vertical-align: middle;
+                font-size: 1.5em;
+            }
+            a:hover{
+                background-color: $secondary_color;
+            }
         }
     }
 }

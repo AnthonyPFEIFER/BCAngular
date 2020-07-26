@@ -13,18 +13,18 @@
     <div class="row menu-accueil header-accueil">
 
         <div class="col-md-3 onglet">
-            <a class="mr-5" routerLink="home">Accueil </a>
+            <button routerLink="home">Accueil </button>
         </div>
         <div class="col-md-3 onglet">
-            <a *ngIf="currentUser?.username" [routerLink]="['/pro-profil', currentUser?.id]"
-                >Mon profil</a>
+            <button *ngIf="currentUser?.username" [routerLink]="['/pro-profil', currentUser?.id]">Mon profil</button>
         </div>
         <div class="col-md-3 onglet">
-            <a class="mr-5" routerLink="admin-profil">Profil Admin </a>
+            <button routerLink="admin-profil">Profil Admin </button>
         </div>
         <div class="col-md-3 onglet">
-            <a *ngIf="!currentUser" class="mr-5" routerLink="login">M'authentifier </a>
-            <a *ngIf="currentUser?.username" type="submit" (click)="logout()" style="cursor: pointer">Me déconnecter</a>
+            <button *ngIf="!currentUser" routerLink="login">M'authentifier </button>
+            <button *ngIf="currentUser?.username" type="submit" (click)="logout()"> Me
+                déconnecter </button>
         </div>
 
     </div>

@@ -9,6 +9,10 @@
     margin: 0 2%;
     list-style: none;
     text-align: center;
+    button{
+        border: none;
+        text-align: center;
+    }
     a, button{
         background-color: $primary_color;
         color: white;
@@ -19,16 +23,18 @@
         border: 1px solid gainsboro;
         border-bottom: none;
         background-color: $active_color;
-        a{
+        a, button{
             background-color: $active_color;
         }
         }
     
     .onglet:hover{
         background-color: $active_color;
-        a{
+        cursor: pointer;
+        a, button{
             background-color: $active_color;
             color: $tertiary_color;
+            cursor: pointer;
         }
     }
 
@@ -72,4 +78,10 @@ a:hover, button:hover {
 .col-md-2{
     width: 60px;
     text-align: center;
+}
+@media all and (max-width: 1024px){
+    .selected{
+        border: none;
+    }
+
 }
